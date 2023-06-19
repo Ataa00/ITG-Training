@@ -1,3 +1,4 @@
+//Sun-18/6/2023
 // function sayHellow(name){
 //     console.log("Hellow " + name);
 // }
@@ -40,6 +41,13 @@
 
 // const fileSystem = require('fs');
 
+// const file = fileSystem.readFile("./text.txt", (err, data)=>{
+//     if(err){
+//         return callback(err);
+//     }
+//     console.log(data.toString('utf-8'));
+// });
+
 // const files = fileSystem.readdir('$', function (error, files){
 //     if(error){
 //         console.log("Error: ", error);
@@ -54,7 +62,7 @@
 //-----------------------------------------------
 
 // const EventEmitter = require("events");
-// //EventEmitter => UC to represent a class.
+// //EventEmitter => Upper Case to represent a class.
 
 // var emitt = new EventEmitter();
 
@@ -78,21 +86,57 @@
 
 //--------------------------------------------------
 
-const http = require("http");
+// const http = require("http");
 
-// const server = http.createServer();
+// // const server = http.createServer();
 
-const server = http.createServer((req, res) => {
-    if(req.url === "/"){
-        res.write("Hi there..");
-        res.end();
-    }
-});
+// const server = http.createServer((req, res) => {
+//     if(req.url === "/"){
+//         res.write("Hi there..");
+//         res.end();
+//     }
+// });
 
-// server.on("connection", (socket) => {
-//     console.log("new connection...");
+// // server.on("connection", (socket) => {
+// //     console.log("new connection...");
+// // })
+
+// server.listen("3000");
+
+// console.log("Listning to Port 3000.");
+//--------------------------------------------------
+//Initiate a server:
+
+// const http = require("http");
+
+// const server = http.createServer((request, response) => {
+//     console.log("requesting");
+
+//     response.write("Hellow there...");
+//     response.end();
 // })
 
-server.listen("3000");
+// server.listen("3000");
 
-console.log("Listning to Port 3000.");
+// console.log("Server started at: http://localhost:3000/");
+
+//-----------------------------------------------------------------
+//Mon-19/6/2023
+
+//The following code will send a GET request to NASA’s API and print out //the URL for the astronomy picture of the day as well as an explanation:
+// const https = require('https');
+// https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
+//     let data = '';
+//     // A chunk of data has been recieved.
+//     resp.on('data', (chunk) => {
+//         data += chunk;
+//     });
+//     // The whole response has been received. Print out the result.
+//     resp.on('end', () => {
+//         console.log(JSON.parse(data).explanation);
+//     });
+// }).on("error", (err) => {
+//     console.log("Error: " + err.message);
+// });
+//----------------------------------------------------------------------------------------------------
+

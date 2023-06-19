@@ -1,3 +1,5 @@
+//Sun-18/6/2023
+
 // console.log(__filename);
 // console.log(__dirname);
 
@@ -16,13 +18,13 @@
 // in app.js => const log = require(logger.js);
 //log("Message");
 
-const EventEmitter = require("events");
+// const EventEmitter = require("events");
 
-class Logger extends EventEmitter{
-    log(message){
-        console.log(message);
-        this.emit("eventLogged", {id:1, url:"http://"});
-    }
-}
+// class Logger extends EventEmitter{
+//     log(message){
+//         console.log(message);
+//         this.emit("eventLogged", {id:1, url:"http://"});
+//     }
+// }
 
-module.exports = Logger;
+// module.exports = Logger;
