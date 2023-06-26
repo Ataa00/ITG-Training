@@ -15,7 +15,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/api/courses", (request, response) => {
-    response.send(["C++", "JS", "Java", "Pythone"]);
+    response.send(courses);
 });
 
 app.post("/api/courses", (request, response) => {
@@ -85,6 +85,24 @@ app.put("/api/courses/:id", (request, response) =>{
     course.name = request.body.name;
     //return update course
     response.send(course);
+});
+
+app.delete("/api/courses/:id", (request, response) => {
+    //Look up the course
+    const course = courses.find((course) => course.id === parseInt(request.params.id));
+    
+    //If it is not exist return 404
+    if(!course){
+        response.status(404).send("This course doesn't exit.");
+        return;
+    }
+
+    //Delete the course
+    const index = courses.indexOf(course);
+    courses.splice(index, 1)
+
+    //return That it is deleted
+    response.send("successfully Deleted.");
 });
 
 //To set the Env variable we use in terminal => set => Windows or export for Linux " set PORT=5000"
