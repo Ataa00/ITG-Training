@@ -1,2 +1,2 @@
-npm-demo/node_modules/
-restExample/node_modules
+*/node_modules/
+*/package-lock.json
