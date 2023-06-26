@@ -22,7 +22,9 @@
   "homepage": "https://github.com/Ataa00/ITG-Training#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "joi": "^17.9.2",
+    "joi": "^17.9.2"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.22"
   }
 }
