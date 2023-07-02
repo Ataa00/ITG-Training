@@ -8,7 +8,7 @@ It is an imaginary service to renting out movies.
 # Task 2 – Part 1 (CommonJS Modules):
 ---
 
-## Task Description:
+**Task Description:**
 
 Building a service to manage the list of genres.  
 You should create an end-point to GET all the genres. As well as Create a new genre and Update or DELETE an existing one.  
