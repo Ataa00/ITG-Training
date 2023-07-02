@@ -3,9 +3,30 @@ const sum = require("./math-lib/sum.js");
 const sub = require("./math-lib/substract.js");
 const mult = require("./math-lib/multiply.js");
 const divide = require("./math-lib/divide.js");
+const prompt = require('prompt-sync')({sigint: true});
 
-console.log(sum(1,1), sub(1,1), mult(1,1), divide(1,1));
+let firstNumber = Number(prompt("Enter the first number: "));
+let secondNumber = Number(prompt("Enter the second number: "));
+let operation = prompt("Enter the operation you want to apply (sum: *, sub: -, devide: /, mult: *, exit: e): ");
 
-console.log(sum(1.0,1.5), sub(1,1.5), mult(1,1.5), divide(1,1.5));
-
-console.log(sum(1.0,1.55234), sub(1,1.55234), mult(1,1.55234), divide(1,1.55234));
+while(operation !== "e"){
+    switch(operation){
+        case "+":
+            console.log(sum(firstNumber, secondNumber));
+            break;
+        case "-":
+            console.log(sub(firstNumber, secondNumber));
+            break;
+        case "*":
+            console.log(mult(firstNumber, secondNumber));
+            break;
+        case "/":
+            console.log(divide(firstNumber, secondNumber));
+            break;
+        default:
+            console.log("Wrong operation.")
+    }
+    firstNumber = Number(prompt("Enter the first number: "));
+    secondNumber = Number(prompt("Enter the second number: "));
+    operation = prompt("Enter the operation you want to apply (sum: *, sub: -, devide: /, mult: *, exit: e): ");
+}

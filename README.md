@@ -22,7 +22,7 @@ Solved Task-2
   git checkout -b Task2-CommonJSModules
   ```
 - Secondly, created a new folder called it CommonJSModules.
-- Inside that folder I initialized the Node project using the following command:
+- Inside that folder, I initialized the Node project using the following command:
   ```
   npm init
   ```
@@ -35,3 +35,5 @@ Solved Task-2
 ```
 node app.js
 ```
+Note:  
+I used ```'prompt-sync'``` library to read numbers from the console. 
