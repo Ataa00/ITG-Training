@@ -3,10 +3,10 @@
 #Branch Description:
 This branch includes all files and folders that I practised to learn NodeJS and AWS.
 
-#Task1: Git-Commands
+# Task1: Git-Commands
 ---
 
-##Task Description:
+## Task Description:
 
 - Create a description for your Gitlab
 - Rename master to main
@@ -17,7 +17,7 @@ This branch includes all files and folders that I practised to learn NodeJS and 
 - Clear the contents of the main branch except for README.md/gitignore files
 - Provide the commands for GIT for every point above
 
-##Approach:
+## Approach:
 - First, I created a new branch called practice-work to push my practice work on it.  
   Using the following command:
   ```
@@ -29,7 +29,7 @@ This branch includes all files and folders that I practised to learn NodeJS and 
   git branch -m master main
   ```
   
-##Files/Folders that can be ignored in README
+## Files/Folders that can be ignored in README
 - dependency caches, such as the contents of /node_modules or /packages
 - compiled code, such as .o, .pyc, and .class files
 - build output directories, such as /bin, /out, or /target
