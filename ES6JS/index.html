@@ -6,7 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Please open browser dev. tool and open the console to see the results.</h1>
+    <div class="container">
+        <div>
+            <h3>First number: </h3>
+            <input type="number" id="firstNumber">
+        </div>
+        <div>
+            <h3>Operation: </h3>
+            <h5>(sum: *, sub: -, devide: /, mult: *)</h5>
+            <input type="text" id="operation">
+        </div>
+        <div>
+            <h3>Second number: </h3>
+            <input type="number" id="secondNumber">
+        </div>
+        <div>
+            <h3>Result: </h3>
+            <input type="number" id="result" disabled>
+            <input style="width:60; height:30px;" type="button" id="submit" value="submit">
+        </div>
+    </div>
     <script src="app.js" type="module"></script>
 </body>
 </html>
