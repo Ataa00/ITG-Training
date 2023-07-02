@@ -25,7 +25,8 @@ To create a new genre: http://localhost:3000/api/genres/Drama
 To edit an existing genre: http://localhost:3000/api/genres/Action
 - For DELETE:  
 To delete a genre: http://localhost:3000/api/genres/Action
-**Note:**
+
+**Note:**  
 You should provide the changes within the body request.
 ```
 {
