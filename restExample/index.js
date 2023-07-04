@@ -1,8 +1,28 @@
+const helmet = require("helmet");
+const morgan = require("morgan");
 const Joi = require("joi");
+const logger = require("./logger");
+const authenticator = require("./authenticator");
 const express = require("express");
 const app = express();
 
+//To use middleware functions
 app.use(express.json());
+app.use(express.urlencoded( {extended: true}));
+app.use(express.static("public"));
+app.use(helmet());
+
+if(app.get("env") === "development"){
+    app.use(morgan('tiny'));
+    console.log("Morgane is enabled...")
+}
+//Development, testing, production...
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`); //Default value if it is not setted is undefined
+console.log(`APP: ${app.get("env")}`); //Default value is Development
+
+app.use(logger);
+
+app.use(authenticator);
 
 let courses = [
     {id : 1, name : "Course1"},
@@ -11,7 +31,7 @@ let courses = [
 ];
 
 app.get("/", (request, response) => {
-    response.send("Hellow world...");
+    response.send("Hello world...");
 });
 
 app.get("/api/courses", (request, response) => {
