@@ -1,5 +1,4 @@
 # ITG-Training
-# ITG-Training
 
 # Folder Description:
 
