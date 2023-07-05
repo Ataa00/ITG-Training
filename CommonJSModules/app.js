@@ -5,11 +5,15 @@ const mult = require("./math-lib/multiply.js");
 const divide = require("./math-lib/divide.js");
 const prompt = require('prompt-sync')({sigint: true});
 
-let firstNumber = Number(prompt("Enter the first number: "));
-let secondNumber = Number(prompt("Enter the second number: "));
-let operation = prompt("Enter the operation you want to apply (sum: *, sub: -, devide: /, mult: *, exit: e): ");
+let firstNumber = null;
+let secondNumber = null;
+let operation = null;
 
 while(operation !== "e"){
+    
+    firstNumber = Number(prompt("Enter the first number: "));
+    secondNumber = Number(prompt("Enter the second number: "));
+    operation = prompt("Enter the operation you want to apply (sum: *, sub: -, devide: /, mult: *, exit: e): ");
     switch(operation){
         case "+":
             console.log(sum(firstNumber, secondNumber));
@@ -26,7 +30,4 @@ while(operation !== "e"){
         default:
             console.log("Wrong operation.")
     }
-    firstNumber = Number(prompt("Enter the first number: "));
-    secondNumber = Number(prompt("Enter the second number: "));
-    operation = prompt("Enter the operation you want to apply (sum: *, sub: -, devide: /, mult: *, exit: e): ");
 }
