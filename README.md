@@ -1,6 +1,5 @@
 # ITG-Training
 
-<<<<<<< HEAD
 ## Branch Description:
 
 This branch aims to solve the tasks that my trainer provides me.  
@@ -10,6 +9,11 @@ For more information about each Task please enter the folder you want.
 
 Here I reverted all commits except main branch.  
 git revert <sha-of-commit>
+=======
+# Branch Description:
+
+In this branch I cleared all unwanted files/folders except .gitignore and README.md. 
+>>>>>>> 7e66329eab8c317124570c5d042eb513522aabb2
 
 # Task1: Git-Commands
 ---
