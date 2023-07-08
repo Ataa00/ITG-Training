@@ -16,7 +16,6 @@ body{
     height: 100%;
     position: absolute;
     opacity: 70%;
-    background-color: lightcoral;
     z-index: -9;
     border-radius: 20px;
 }
@@ -74,13 +73,14 @@ body{
 .submitbnt{
     margin-left: 20px;
     margin-top: 20px;
-    background-color: lightcoral;
     border-radius: 10px;
+    background-color: #9c7c4c;
 }
 
 .select{
-    background-color: lightcoral;
     border-radius: 10px;
+    background-color: #9c7c4c;
+
 }
 
 .optionsForm{

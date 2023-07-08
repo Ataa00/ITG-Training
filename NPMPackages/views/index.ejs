@@ -15,7 +15,7 @@
         <div class="divider"></div>
         <div class="timeZoneOptionsContainer">
             <label for="timeZoneName" class=" text labelOptions">Time Zone:</label>
-            <form class="optionsForm" action="/" method="POST">
+            <form class="optionsForm" onsubmit="submit()" action="/" method="POST">
                 <select class="text select" name="timeZoneName" id="timeZoneName">
                     <% for (let i = 0; i < time_zones.length; i++) { %>
                         <% if (time_zones[i] === name) { %>
@@ -25,7 +25,6 @@
                         <% } %>
                     <% } %>
                 </select>
-                <input type="hidden" name="Ataa" value="Ataa">
                 <input class="submitbnt text" type="submit">
             </form>
         </div>

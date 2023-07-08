@@ -28,4 +28,12 @@ function incrementClock(){
     hh=0;
   }
   return;
-}
+};
+
+console.log("test");
+
+function submit(){
+  const timeZoneSelected = document.getElementById("timeZoneName").value;
+  console.log("asdasd");
+  console.log(timeZoneSelected);
+};
