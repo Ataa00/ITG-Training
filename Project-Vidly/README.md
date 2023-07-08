@@ -33,3 +33,19 @@ You should provide the changes within the body request.
   "type":"Drama"
 }
 ```
+# Practice-Work-Project – Part 2 (Restructure the app):  
+- The express project should contain the following:
+  - Middleware: To add middleware files
+  - Config: to add configurations for DB, dev or production.
+  - Public: add static files like CSS and images.
+  - Routes: to handle routes.
+  - Views: to add html files
+- For this project, I needed to add a middleware folder and a routes folder:
+  - Middleware:  
+    I add two files:
+      - data.js: to export the genres and movies data.
+      - validation.js: to export the function that validates the movie type.
+  - Routes:  
+    I have two main routes:
+      - Genres
+      - Home
