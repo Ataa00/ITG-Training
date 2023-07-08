@@ -1,0 +1,91 @@
+body{
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.backgroundPage{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -10;
+}
+
+.clockContainerBackground{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 70%;
+    background-color: lightcoral;
+    z-index: -9;
+    border-radius: 20px;
+}
+
+.clockContainer{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name{
+    margin-top: 10%;
+    color: rebeccapurple;
+    font-size: 4em;   
+    color: white;
+    border-bottom-style: solid;
+}
+
+.clock{
+    margin: 20px    ;
+    font-size: 10em;   
+    color: white;
+}
+
+.divider{
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    z-index: -8;
+}
+
+.timeZoneOptionsContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 10px 50px 0;
+}
+
+.text{
+    font-size: 2em;
+    color: white;
+}
+
+.labelOptions{
+    margin-right: 20px;
+    flex-wrap: nowrap;
+}
+
+.submitbnt{
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: lightcoral;
+    border-radius: 10px;
+}
+
+.select{
+    background-color: lightcoral;
+    border-radius: 10px;
+}
+
+.optionsForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

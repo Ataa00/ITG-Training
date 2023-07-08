@@ -6,7 +6,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/index.js"
+    "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Ataa00/ITG-Training#readme",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "moment-timezone": "^0.5.43"
   },
