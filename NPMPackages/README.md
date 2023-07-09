@@ -53,6 +53,4 @@ Also, contains selectbox to let the user select the wanted timeZone.
   ```
 
 ## Page Image:
-[pageImage][siteImage]
-
-[siteImage](public/img/PageImage.png)
+![](public/img/PageImage.png)
