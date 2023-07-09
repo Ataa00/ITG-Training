@@ -55,4 +55,4 @@ Also, contains selectbox to let the user select the wanted timeZone.
 ## Page Image:
 [pageImage][siteImage]
 
-[sitImage]: "./public/img/PageImage.png"
+[sitImage]:(./public/img/PageImage.png)
