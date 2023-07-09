@@ -29,11 +29,3 @@ function incrementClock(){
   }
   return;
 };
-
-console.log("test");
-
-function submit(){
-  const timeZoneSelected = document.getElementById("timeZoneName").value;
-  console.log("asdasd");
-  console.log(timeZoneSelected);
-};

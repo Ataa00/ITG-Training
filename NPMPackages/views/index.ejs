@@ -15,8 +15,8 @@
         <div class="divider"></div>
         <div class="timeZoneOptionsContainer">
             <label for="timeZoneName" class=" text labelOptions">Time Zone:</label>
-            <form class="optionsForm" onsubmit="submit()" action="/" method="POST">
-                <select class="text select" name="timeZoneName" id="timeZoneName">
+            <form class="optionsForm" action="/" method="POST">
+                <select class="text select" name="timeZoneName" id="timeZoneName" required>
                     <% for (let i = 0; i < time_zones.length; i++) { %>
                         <% if (time_zones[i] === name) { %>
                             <option class="option" value="<%= time_zones[i] %>" selected ><%= time_zones[i] %></option>
@@ -29,10 +29,9 @@
             </form>
         </div>
     </div>
-    
     <input type="hidden" id="houres" value=<%=time.houres%> >
     <input type="hidden" id="minutes" value=<%=time.minutes%> >
     <input type="hidden" id="seconds" value=<%=time.seconds%> >
-    <script type="module" src="js/clock.js"></script>
+    <script src="js/clock.js"></script>
 </body>
 </html>
