@@ -18,13 +18,37 @@ Use the following URLs to test CRUD functions.
 
 - For GET:  
   - To get all genres: http://localhost:3000/api/genres/
-  - To get a specific genre: http://localhost:3000/api/genres/Action
+    - It Sends a request to get all movies in the stock. 
+    - It return a response a list with all movies.
+  - To get a specific genre: http://localhost:3000/api/genres/:type
+    - Here we provides the type of the genre in the request header (URL).  
+      example:  http://localhost:3000/api/genres/Action
+    - It return a response a list with all movies that have the same genre.
 - For POST:  
-To create a new genre: http://localhost:3000/api/genres/Drama
+To create a new genre: http://localhost:3000/api/genres/addGenre  
+  - Here we send the movie type inside the body request as follows:  
+    ```
+    {
+      "type": "Drama"
+    } 
+    ```
+  - It returns a response with all genres list.
 - For PUT:  
-To edit an existing genre: http://localhost:3000/api/genres/Action
+  To edit an existing genre: http://localhost:3000/api/genres/:type  
+    - Here we provide the type of the genre in the request header (URL).  
+      and provide the corrected movie type name inside the request body as follows:  
+      http://localhost:3000/api/genres/Action
+      ```
+      {
+        "type": "Drama"
+      } 
+      ```
+    - It returns a response with all genres list.
 - For DELETE:  
-To delete a genre: http://localhost:3000/api/genres/Action
+  To delete a genre: http://localhost:3000/api/genres/:type
+    - Here we provide the type of the genre in the request header (URL).  
+      http://localhost:3000/api/genres/Action
+    - It returns a response with all genres list.
 
 **Note:**  
 You should provide the changes within the body request.
