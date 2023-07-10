@@ -1,5 +1,5 @@
 
-const genres = [
+export const genres = [
     {
         "id" : 1,
         "type":"All"
@@ -22,7 +22,7 @@ const genres = [
     }
 ];
 
-var movies = [
+export const movies = [
     {
         "id" : 1,
         "type" : "Action",
@@ -44,6 +44,3 @@ var movies = [
         "name" : "Iron man"
     },
 ];
-
-module.exports.genres = genres;
-module.exports.movies = movies;

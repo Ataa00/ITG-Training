@@ -1,10 +1,11 @@
 
-const express = require("express");
+import express from "express";
+import {movies} from "../middleware/data";
+
 const router = express.Router();
-const {movies} = require("../middleware/data");
 
 router.get("/", (req, res) => {
     res.send(movies);
 });
 
-module.exports = router;
+export default router;

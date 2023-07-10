@@ -1,8 +1,10 @@
 
-const express = require("express");
+import express from "express";
+import {validateTypeOfMovies} from "../middleware/validation";
+import {genres, movies} from "../middleware/data";
+
+
 const router = express.Router();
-const validateTypeOfMovies = require("../middleware/validation");
-const {genres, movies} = require("../middleware/data");
 
 router.get("/", (req, res) => {
     res.send(movies);
@@ -63,4 +65,4 @@ router.delete("/:type", (req, res) => {
     res.send(genres);
 });
 
-module.exports = router;
+export default router;

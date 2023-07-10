@@ -1,7 +1,7 @@
 
-const Joi = require("joi");
-const express = require("express");
-const home = require("./routes/home");
+import express from "express"
+import home from "./routes/home"
+
 
 const app = express();
 
