@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
 
     let time_zones = moment.tz.names();
     let time = {
-        "hours": moment.tz(timeZoneName).format("hh"),
+        "hours": moment.tz(timeZoneName).format("HH"),
         "minutes": moment.tz(timeZoneName).format("mm"),
         "seconds": moment.tz(timeZoneName).format("ss")
     };
