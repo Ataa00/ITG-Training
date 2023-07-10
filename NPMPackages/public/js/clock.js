@@ -1,4 +1,4 @@
-let hh = document.getElementById("houres").value;
+let hh = document.getElementById("hours").value;
 let mm = document.getElementById("minutes").value;
 let ss = document.getElementById("seconds").value;
 const clock = document.getElementById("clock");

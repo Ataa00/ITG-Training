@@ -17,7 +17,7 @@ app.use("/js", express.static(__dirname + "public/js"));
 app.use("/", timeZone);
 
 
-const port = process.env.PORT || 5555;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server listning on : http://localhost:${port}`);
 });

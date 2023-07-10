@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     let time_zones = moment.tz.names();
     let date = new Date();
     let time = {
-        "houres": date.getHours(),
+        "hours": date.getHours(),
         "minutes": date.getMinutes(),
         "seconds": date.getSeconds()
     };
@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
 
     let time_zones = moment.tz.names();
     let time = {
-        "houres": moment.tz(timeZoneName).format("hh"),
+        "hours": moment.tz(timeZoneName).format("hh"),
         "minutes": moment.tz(timeZoneName).format("mm"),
         "seconds": moment.tz(timeZoneName).format("ss")
     };
