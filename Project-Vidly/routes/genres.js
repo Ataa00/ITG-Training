@@ -1,14 +1,12 @@
 
 import express from "express";
 import {validateTypeOfMovies} from "../middleware/validation";
-import {genres, movies} from "../middleware/data";
+import {getGenres} from "../controller/genresAPIController";
 
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send(movies);
-});
+router.get("/", (req, res) => getGenres(req, res));
 
 router.get("/:type", (req, res) => {
 
@@ -19,7 +17,8 @@ router.get("/:type", (req, res) => {
 });
 
 router.post("/addGenre", (req, res) => {
-
+    const genres = getGenres();
+    console.log(genres);
     const genre = genres.find(g => g.type === req.body.type);
     console.log(genre);
     if(genre) return res.status(404).send("This genre is already exist.");
@@ -28,11 +27,10 @@ router.post("/addGenre", (req, res) => {
 
     if(error) return res.status(400).send(error.details[0].message);
     
-    genres.push({
-        "id" : genres.length+1,
-        "type" : req.body.type
-    });
-    res.send(genres);
+    creaeteGenre({
+        "name" : req.body.type
+    })
+    res.send(getGenres);
 });
 
 router.put("/:type", (req, res) => {
