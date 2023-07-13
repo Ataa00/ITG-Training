@@ -73,10 +73,11 @@ You should provide the changes within the body request.
     I have two main routes:
       - Genres
       - Home
+      - Customers
 # Project Vidly Version2:
 - Updated the project structure as follows:
   - Controller:
-    Holds the modules that control genre APIs as follows:
+    Holds the modules that control genre APIs and Customer APIs as follows:
     - Create a new Genre
     - Get Genres
     - Get a specific Genre
@@ -85,7 +86,7 @@ You should provide the changes within the body request.
   - Middleware:
     - Added a module to handle the connection with MongoDB using Mongoose.
     - Validation:
-      Modified this module to two functions one to validate the GenreID and the other to validate GenreType.
+      Modified this module to two functions one to validate the GenreID and the other to validate GenreType and validate CustomerID and Customer parameters.
   - Models:  
     This folder holds modules that return the schema model of the Genre collection in the DB.
   - Routes:  
