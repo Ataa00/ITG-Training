@@ -1,7 +1,7 @@
 import Genre from "../models/genres";
 import { validateGenreID, validateTypeOfMovies } from "../middleware/validation";
 
-export async function creaeteGenre(req, res){
+export async function createGenre(req, res){
     try{
         const { error } = validateTypeOfMovies(req.body);
 
@@ -23,19 +23,19 @@ export async function creaeteGenre(req, res){
     }
     catch(ex){
         console.log(ex);
-        res.status(500).send("Server Error")
+        res.status(500).send("Server Error:\ncreaeteGenre function. Inside GenreAPIController");
     }
 }
 
 export async function getGenres(req, res){
     try{
-        const genres = await Genre
-            .find();
+        const genres = await Genre.find();
+
         res.send(genres);
     }
     catch(ex){
         console.log(ex);
-        res.status(500).send("Server Error")
+        res.status(500).send("Server Error:\ngetGenres function. Inside GenreAPIController")
     }
 }
 
@@ -45,6 +45,7 @@ export async function getGenre(req, res){
             .find({
                 name: req.params.type
             });
+            
         if(!genre){
             if(!genre) return res.status(404).send("This genre doesn't exist.");
         }
@@ -52,7 +53,7 @@ export async function getGenre(req, res){
     }
     catch(ex){
         console.log(ex);
-        res.status(500).send("Server Error")
+        res.status(500).send("Server Error:\ngetGenre function. Inside GenreAPIController")
     }
 }
 
@@ -85,7 +86,7 @@ export async function updateGenre(req, res){
     }
     catch(ex){
         console.log(ex.message);
-        res.status(500).send("Server Error")
+        res.status(500).send("Server Error:\nupdateGenre function. Inside GenreAPIController")
     }
 }
 
@@ -110,6 +111,6 @@ export async function deleteGenre(req, res){
     }
     catch(ex){
         console.log(ex.message);
-        res.status(500).send("Server Error")
+        res.status(500).send("Server Error:\ndeleteGenre function. Inside GenreAPIController")
     }
 }
