@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Genre = new mongoose.model("Genre", new mongoose.Schema({
+const Genre = mongoose.model("Genre", new mongoose.Schema({
     name: {
         type: String,
         min: 2,
