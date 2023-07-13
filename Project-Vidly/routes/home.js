@@ -1,14 +1,9 @@
 
 import express from "express";
-import {getGenres} from "../models/genres.js";
+import {getGenres} from "../controller/genresAPIController";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    console.log("inside home");
-    const get =  async (genres) => genres = await getGenres()
-        .then(() => res.send(genres));
-    get();
-});
+router.get("/", async (req, res) =>  getGenres(req, res));
 
 export default router;
