@@ -18,10 +18,10 @@ Use the following URLs to test CRUD functions.
 
 - For GET:  
   - To get all genres: http://localhost:3000/api/genres/
-    - It Sends a request to get all movies in the stock. 
-    - It return a response a list with all movies.
+    - It Sends a request to get all movies in stock. 
+    - It returns a response to a list with all movies.
   - To get a specific genre: http://localhost:3000/api/genres/:type
-    - Here we provides the type of the genre in the request header (URL).  
+    - Here we provide the type of the genre in the request header (URL).  
       example:  http://localhost:3000/api/genres/Action
     - It return a response a list with all movies that have the same genre.
 - For POST:  
@@ -48,7 +48,7 @@ To create a new genre: http://localhost:3000/api/genres/addGenre
   To delete a genre: http://localhost:3000/api/genres/:type
     - Here we provide the type of the genre in the request header (URL).  
       http://localhost:3000/api/genres/Action
-    - It returns a response with all genres list.
+    - It returns a response with all genres listed.
 
 **Note:**  
 You should provide the changes within the body request.
@@ -83,10 +83,10 @@ You should provide the changes within the body request.
     - Update Genre 
     - Delete Genre
   - Middleware:
-    - Added module to handle the connection with MongoDB using mongoose.
+    - Added a module to handle the connection with MongoDB using Mongoose.
     - Validation:
       Modified this module to two functions one to validate the GenreID and the other to validate GenreType.
-    - Models:
-      This folder holds modules that return the schema model of Genre collection in the DB.
-    - Routes: 
-      Same as Version 1. 
+  - Models:  
+    This folder holds modules that return the schema model of the Genre collection in the DB.
+  - Routes:  
+    Same as Version 1. 
