@@ -90,3 +90,65 @@ You should provide the changes within the body request.
     This folder holds modules that return the schema model of the Genre collection in the DB.
   - Routes:  
     Same as Version 1. 
+- Added new APIs for Customers:
+  - For Create user:
+    - I used POST method.
+    - URL: http/localhost:3000/api/customers/createCustomer
+    - Inside body request:
+      ```
+      {
+        "name": "Human",
+        "phoneNumber: "00000000000000",
+        isGolden: ture
+      }
+      ```   
+    - It will go through the validation funcion in the middleware to validate the provided customer parameters.
+    - After that, before saving the customer instance the mongoose model for customer will check if the parameters valid or not.
+    - It will return the created customer instance.
+  - For get user:
+    - There are two methods
+      - Get single customer:
+        - I used GET method.
+        - URL: http/localhost:3000/api/customers/getCustomer
+        - Inside body request:
+          ```
+          {
+            "customerID": "xxxxxxxxxxxxxx"
+          }
+          ```   
+        - It will go through the validation funcion in the middleware to validate the provided customerID.
+        - CustomerID should be 24 characters of type objectId.  
+        - It will return the wanted customer instance.
+      - Get all customers:
+        - I used GET method.
+        - URL: http/localhost:3000/api/customers  
+        - It will return all customers.
+  - For update user:
+    - I used PUT method.
+    - URL: http/localhost:3000/api/customers/updateCustomer
+    - Inside body request:
+      ```
+      {
+        "customerID": "xxxxxxxxxxxxxx",
+        "name": "Human",
+        "phoneNumber: "00000000000000",
+        isGolden: ture
+      }
+      ```   
+    - Firstly, It will check if the wanted customer inside the database. 
+    - Secondly, If it is there, It will go through the validation funcion in the middleware to validate the provided customer parameters.
+    - After that, before saving the updated customer the mongoose model for customer will check if the parameters valid or not.
+    - It will update it and return a status message if it is updated or not. 
+  - For delete user:
+    - I used PUT method.
+    - URL: http/localhost:3000/api/customers/deleteCustomer
+    - Inside body request:
+      ```
+      {
+        "customerID": "xxxxxxxxxxxxxx"
+      }
+      ```   
+    - Firstly, It will check if the wanted customer inside the database. 
+    - Secondly, If it is there, It will go through the validation funcion in the middleware to validate the provided customerID.
+    - After that, it will remove it from the Database.
+    - It will update it and return a status message if it is deleted or not. 
