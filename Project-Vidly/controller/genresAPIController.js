@@ -1,123 +1,115 @@
 import Genre from "../models/genres";
+import { validateGenreID, validateTypeOfMovies } from "../middleware/validation";
 
-// router.get("/:type", (req, res) => {
-
-    // const genre = genres.find(g => g.type === req.params.type);
-    // if(!genre) return res.status(404).send("This genre doesn't exist.")
-
-    // res.send(movies.filter(m =>  m.type === genre.type));
-// });
-
-// router.post("/addGenre", (req, res) => {
-    // const genres = getGenres();
-    // console.log(genres);
-    // const genre = genres.find(g => g.type === req.body.type);
-    // console.log(genre);
-    // if(genre) return res.status(404).send("This genre is already exist.");
-    
-    // const { error } = validateTypeOfMovies(req.body);
-
-    // if(error) return res.status(400).send(error.details[0].message);
-    
-    // creaeteGenre({
-    //     "name" : req.body.type
-    // })
-    // res.send(getGenres);
-// });
-
-// router.put("/:type", (req, res) => {
-
-//     const genre = genres.find(g => g.type === req.params.type);
-
-//     if(!genre) return res.status(404).send("This genre doesn't exist.");
-    
-//     const { error } = validateTypeOfMovies(req.body);
-    
-//     if(error) return res.status(400).send(error.details[0].message);
-
-//     genre.type = req.body.type;
-
-//     res.send(genre);
-// });
-
-// router.delete("/:type", (req, res) => {
-
-//     const genre = genres.find(g => g.type === req.params.type);
-
-//     if(!genre) return res.status(404).send("This genre doesn't exist.");
-    
-//     const { error } = validateTypeOfMovies(req.params);
-    
-//     if(error) return res.status(400).send(error.details[0].message);
-
-//     genres.splice(genre, 1);
-
-//     res.send(genres);
-// });
-
-// const genres = getGenres();
-//     if(genre) return res.status(404).send("This genre is already exist.");
-    
-//     const { error } = validateTypeOfMovies(req.body);
-
-//     if(error) return res.status(400).send(error.details[0].message);
-    
-//     creaeteGenre({
-//         "name" : req.body.type
-//     })
-//     res.send(getGenres);
 export async function creaeteGenre(req, res){
-    const genres = await Genre.find();
-    console.log(genres);
-    // const genre = genres.find(g => g.type === req.body.type);
-    // console.log(genre);
-    // const genre = new Genre({
-    //     name: name
-    // });
+    try{
+        const { error } = validateTypeOfMovies(req.body);
 
-    // try{
-    //    const result = await genre.save();
-    //    console.log(result);
-    // }
-    // catch(exp){
-    //     for(err in exp.errors){
-    //         console.log(exp.errors[err]);
-    //     }
-    // }
+        if(error) return res.status(400).send(error.details[0].message);
+        
+        let genre = await Genre
+            .find({
+                name: req.body.type
+            });
+
+        if(genre.length > 0) return res.status(404).send("This genre is already exist.");
+        
+        genre = await new Genre({
+            name: req.body.type
+        });
+
+        const result = await genre.save();
+        res.send(result);
+    }
+    catch(ex){
+        console.log(ex);
+        res.status(500).send("Server Error")
+    }
 }
 
 export async function getGenres(req, res){
-    const genres = await Genre
-        .find();
-    console.log(genres);
-    res.send(genres[0]);
-}
-
-export async function getGenre(name){
-    const genre = await Genre
-        .find({
-            name: name
-        });
-    if(!genre){
-        console.log(`There is no genre with this name: ${name}`);
-        return;
+    try{
+        const genres = await Genre
+            .find();
+        res.send(genres);
     }
-    return genre;
+    catch(ex){
+        console.log(ex);
+        res.status(500).send("Server Error")
+    }
 }
 
-export async function updateGenre(name){
-    const genre = await Genre.update({
-        name: name
-    },
-    {
-        $set: {
-            name: name
+export async function getGenre(req, res){
+    try{
+        const genre = await Genre
+            .find({
+                name: req.params.type
+            });
+        if(!genre){
+            if(!genre) return res.status(404).send("This genre doesn't exist.");
         }
-    });    
+        res.send(genre[0]);
+    }
+    catch(ex){
+        console.log(ex);
+        res.status(500).send("Server Error")
+    }
 }
 
-export async function deleteGenre(name){
-    const genre = await Genre.delete({
-        name: name
-    });    
+export async function updateGenre(req, res){
+    try{
+        const { error } = validateTypeOfMovies({"type": req.body.type});
+
+        if(error) return res.status(400).send(error.details[0].message);
+        
+        let genre = await Genre
+            .find({
+                _id: req.body.genreID
+            });
+            
+        if(genre.length === 0) return res.status(404).send("This genre doesn't exist.");
+
+        genre = await Genre.findByIdAndUpdate({
+            _id: req.body.genreID
+        },
+        {
+            $set: {
+                name: req.body.type
+            }
+        }, 
+        {
+            new: true
+        });
+
+        res.send(genre);
+    }
+    catch(ex){
+        console.log(ex.message);
+        res.status(500).send("Server Error")
+    }
+}
+
+export async function deleteGenre(req, res){
+    try{
+        const { error } = validateGenreID({"genreID": req.body.genreID});
+
+        if(error) return res.status(400).send(error.details[0].message);
+        
+        let genre = await Genre
+            .find({
+                _id: req.body.genreID
+            });
+            
+        if(genre.length === 0) return res.status(404).send("This genre doesn't exist.");
+
+        genre = await Genre.deleteOne({
+            _id: req.body.genreID
+        });
+
+        res.send(genre);
+    }
+    catch(ex){
+        console.log(ex.message);
+        res.status(500).send("Server Error")
+    }
 }
