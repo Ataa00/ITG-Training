@@ -1,9 +1,11 @@
 
 import Joi from "joi"
+import JoiObjectId from "joi-objectid";
+const myJoiObjectId = JoiObjectId(Joi);
 
-export function validateTypeOfMovies(genre){
+export function validateGenre(genre){
     const schema = Joi.object({ 
-        type: Joi.string().required().max(20)
+        name: Joi.string().required().max(20)
     });
 
     return schema.validate(genre);
@@ -11,7 +13,7 @@ export function validateTypeOfMovies(genre){
 
 export function validateGenreID(genre){
     const schema = Joi.object({ 
-        genreID: Joi.string().required().max(30)
+        genreID: myJoiObjectId().required()
     });
 
     return schema.validate(genre);
@@ -29,8 +31,29 @@ export function validateCustomer(customer){
 
 export function validateCustomerID(customerID){
     const schema = Joi.object({ 
-        customerID: Joi.string().required().max(24).min(24)
+        customerID: myJoiObjectId().required()
     });
 
     return schema.validate(customerID);
 };
+
+export function validateMovie(movie){
+    const movieSchema = Joi.object({
+        title: Joi.string().min(0).max(30).required(),
+        genre: Joi.object().keys({
+            name: Joi.string().required().max(20)
+        }),
+    numberInStock: Joi.number(),
+    dailyRentalRate: Joi.number()
+    });
+
+    return movieSchema.validate(movie);
+}
+
+export function validateMovieID(movie){
+    const movieSchema = Joi.object({
+        movieID: myJoiObjectId().required()
+    });
+
+    return movieSchema.validate(movie);
+}
