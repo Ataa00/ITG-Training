@@ -1,9 +1,9 @@
 import Genre from "../models/genres";
-import { validateGenreID, validateTypeOfMovies } from "../middleware/validation";
+import { validateGenreID, validateGenre } from "../middleware/validation";
 
 export async function createGenre(req, res){
     try{
-        const { error } = validateTypeOfMovies(req.body);
+        const { error } = validategenre(req.body);
 
         if(error) return res.status(400).send(error.details[0].message);
         
@@ -59,7 +59,7 @@ export async function getGenre(req, res){
 
 export async function updateGenre(req, res){
     try{
-        const { error } = validateTypeOfMovies({"type": req.body.type});
+        const { error } = validateGenre({"type": req.body.type});
 
         if(error) return res.status(400).send(error.details[0].message);
         

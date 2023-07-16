@@ -72,15 +72,19 @@ export async function updateCustomer(req, res){
 
         if(customer.length === 0) return res.status(404).send("This customer does not exist.");
 
-        customer = await Customer.updateOne(
+        customer = await Customer.findOneAndUpdate(
             {
                 _id: req.body.customerID
             },
             {
-            name: req.body.name,
-            phoneNumber: req.body.phoneNumber,
-            isGolden: req.body.isGolden
-        });
+                $set: {
+                    name: req.body.name,
+                    phoneNumber: req.body.phoneNumber,
+                    isGolden: req.body.isGolden
+                }
+            },
+            {new: true}
+        );
 
         res.send(customer);
     }
