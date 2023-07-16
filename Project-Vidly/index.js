@@ -4,13 +4,11 @@ import genre from "./routes/genres";
 import customer from "./routes/customers";
 import connectDB from "./middleware/connectDB"; 
 
-const DB = async () => await connectDB();
-DB();
-
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+app.use(connectDB);
 app.use("/", home);
 app.use("/api/genres", genre);
 app.use("/api/customers", customer);
