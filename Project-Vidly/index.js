@@ -2,6 +2,7 @@ import express from "express";
 import home from "./routes/home";
 import genre from "./routes/genres";
 import customer from "./routes/customers";
+import movie from "./routes/movies"
 import connectDB from "./middleware/connectDB"; 
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(connectDB);
 app.use("/", home);
 app.use("/api/genres", genre);
 app.use("/api/customers", customer);
+app.use("/api/movies", movie);
 
 let port = process.env.PORT || 3000;
 app.listen(port, () => {
