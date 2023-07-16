@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const Genre = mongoose.model("Genre", new mongoose.Schema({
+export const genreSchema = new mongoose.Schema({
     name: {
         type: String,
         minlength: 2,
@@ -8,6 +8,8 @@ const Genre = mongoose.model("Genre", new mongoose.Schema({
         unique: true,
         required: true
     },
-}));
+});
+
+const Genre = mongoose.model("Genre", genreSchema);
 
 export default Genre;
