@@ -5,12 +5,12 @@ const router = express.Router();
 
 router.get("/", async (req, res) => getCustomers(req, res));
 
-router.get("/getCustomer", async (req, res) => getCustomer(req, res));
+router.get("/:customerID", async (req, res) => getCustomer(req, res));
 
-router.post("/createCustomer", async (req, res) => createCustomer(req, res));
+router.post("/", async (req, res) => createCustomer(req, res));
 
-router.put("/updateCustomer", async (req, res) => updateCustomer(req, res));
+router.put("/:customerID", async (req, res) => updateCustomer(req, res));
 
-router.delete("/deleteCustomer", async (req, res) => deleteCustomer(req, res));
+router.delete("/:customerID", async (req, res) => deleteCustomer(req, res));
 
 export default router;
