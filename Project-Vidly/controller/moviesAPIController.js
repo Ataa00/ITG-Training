@@ -3,9 +3,10 @@ import Movie from "../models/movies";
 import { validateMovie, validateMovieID } from "../middleware/validation";
 
 export async function createMovie(req, res){
+
     const {error} = validateMovie(req.body);
 
-    if (error) return res.send(400, error.details[0].message);
+    if (error) return res.status(400).send(error.details[0].message);
 
     const movie = await new Movie({
         title: req.body.title,
@@ -20,19 +21,31 @@ export async function createMovie(req, res){
 }
 
 export async function getMovies(req, res){
-    const movies = await Movie.find();
+    try{
+        const movies = await Movie.find(
+            {
+            _id: {$exists: true}
+            }
+        );
 
-    return res.send(200, movies);
+        return res.status(200).send(movies);
+    }
+    catch(error){
+        console.log(error.message);
+        return res.status(500).send(error.message);
+    }
 }
 
 export async function getMovie(req, res){
-    const {error} = validateMovieID(req.body);
+    const {error} = validateMovieID({
+        movieID: req.params.movieID
+    });
 
     if (error) return res.send(400, error.details[0].message);
 
-    const movie = await Movie.findById(req.body.movieID);
+    const movie = await Movie.findById(req.params.movieID);
 
-    if (!movie) return res.send(404, "This movie ID doesn't exit.");
+    if (!movie) return res.status(404).send("This movie doesn't exist.");
 
     return res.status(200).send(movie);
 }
@@ -41,19 +54,19 @@ export async function getMovie(req, res){
 export async function updateMovie(req, res){
     const {error} = validateMovieID(
         {
-            "movieID": req.body.movieID
+            movieID: req.params.movieID
         });
 
     if (error) return res.send(400, error.details[0].message);
 
-    let movie = await Movie.findById(req.body.movieID);
+    let movie = await Movie.findById(req.params.movieID);
 
-    if (!movie) return res.send(404, "This movie ID doesn't exit.");
+    if (!movie) return res.status(404).send("This movie doesn't exist.");
 
     
     movie = await Movie.findByIdAndUpdate(
         {
-            _id: req.body.movieID
+            _id: req.params.movieID
         }, 
         {
             $set: {
@@ -70,18 +83,20 @@ export async function updateMovie(req, res){
 }
 
 export async function deleteMovie(req, res){
-    const {error} = validateMovieID(req.body);
+    const {error} = validateMovieID({
+        movieID: req.params.movieID
+    });
 
-    if (error) return res.send(400, error.details[0].message);
+    if (error) return res.status(400).send(error.details[0].message);
 
-    let movie = await Movie.findById(req.body.movieID);
+    let movie = await Movie.findById(req.params.movieID);
 
-    if (!movie) return res.send(404, "This movie ID doesn't exit.");
+    if (!movie) return res.status(404).send("This movie doesn't exist.");
 
     
     movie = await Movie.findByIdAndDelete(
         {
-            _id: req.body.movieID
+            _id: req.params.movieID
         }
     );
 
