@@ -1,49 +1,67 @@
 import Genre from "../models/genres";
-import { validateGenreID, validateGenre } from "../middleware/validation";
+import { validateGenre, validateUpdatedGenre} from "../middleware/validation";
 
 export async function createGenre(req, res){
     try{
-        const { error } = validategenre(req.body);
+        const { error } = validateGenre(
+                {
+                    name: req.body.name
+                }
+            );
 
         if(error) return res.status(400).send(error.details[0].message);
         
         let genre = await Genre
             .find({
-                name: req.body.type
+                name: req.body.name
             });
 
-        if(genre.length > 0) return res.status(404).send("This genre is already exist.");
+        if(genre[0]) return res.status(404).send("This genre already exists.");
         
         genre = await new Genre({
-            name: req.body.type
+            name: req.body.name
         });
 
         const result = await genre.save();
         res.send(result);
     }
-    catch(ex){
-        console.log(ex);
-        res.status(500).send("Server Error:\ncreaeteGenre function. Inside GenreAPIController");
+    catch(error){
+        console.log(error.message);
+        res.status(500).send(error.message);
     }
 }
 
 export async function getGenres(req, res){
     try{
-        const genres = await Genre.find();
+        const genres = await Genre.find(
+            {
+                name: {
+                    $exists: true
+                }
+            }
+        );
 
         res.send(genres);
     }
-    catch(ex){
-        console.log(ex);
-        res.status(500).send("Server Error:\ngetGenres function. Inside GenreAPIController")
+    catch(error){
+        console.log(error.message);
+        res.status(500).send(error.message);
     }
 }
 
 export async function getGenre(req, res){
     try{
+        const { error } = validateGenre(
+            {
+                name: req.params.name
+            }
+        );
+
+        if(error) return res.status(400).send(error.details[0].message);
+        
         const genre = await Genre
             .find({
-                name: req.params.type
+                name: req.params.name
             });
             
         if(!genre){
@@ -51,66 +69,79 @@ export async function getGenre(req, res){
         }
         res.send(genre[0]);
     }
-    catch(ex){
-        console.log(ex);
-        res.status(500).send("Server Error:\ngetGenre function. Inside GenreAPIController")
+    catch(error){
+        console.log(error.message);
+        res.status(500).send(error.message);
     }
 }
 
 export async function updateGenre(req, res){
     try{
-        const { error } = validateGenre({"type": req.body.type});
+        const { error } = validateUpdatedGenre(
+                {
+                    oldName: req.params.name,
+                    newName: req.body.name
+                }
+            );
 
         if(error) return res.status(400).send(error.details[0].message);
         
-        let genre = await Genre
+        let genreParams = await Genre
             .find({
-                _id: req.body.genreID
+                name: req.params.name
             });
             
-        if(genre.length === 0) return res.status(404).send("This genre doesn't exist.");
+        if(!genreParams[0]) return res.status(404).send("The genre you want to update doesn't exist.");
 
-        genre = await Genre.findByIdAndUpdate({
-            _id: req.body.genreID
+        let genreBody = await Genre
+            .find({
+                name: req.body.name
+            });
+            
+        if(genreBody[0]) return res.status(404).send("The new genre you want to update already exists.");
+
+        let newGenre = await Genre.updateOne({
+            name: req.params.name
         },
         {
             $set: {
-                name: req.body.type
+                name: req.body.name
             }
-        }, 
-        {
-            new: true
         });
 
-        res.send(genre);
+        res.send(newGenre);
     }
-    catch(ex){
-        console.log(ex.message);
-        res.status(500).send("Server Error:\nupdateGenre function. Inside GenreAPIController")
+    catch(error){
+        console.log(error.message);
+        res.status(500).send(error.message);
     }
 }
 
 export async function deleteGenre(req, res){
     try{
-        const { error } = validateGenreID({"genreID": req.body.genreID});
+        const { error } = validateGenre(
+                {
+                    name: req.params.name
+                }
+            );
 
         if(error) return res.status(400).send(error.details[0].message);
         
         let genre = await Genre
             .find({
-                _id: req.body.genreID
+                name: req.params.name
             });
             
-        if(genre.length === 0) return res.status(404).send("This genre doesn't exist.");
+        if(!genre[0]) return res.status(404).send("This genre doesn't exist.");
 
         genre = await Genre.deleteOne({
-            _id: req.body.genreID
+            name: req.params.name
         });
 
         res.send(genre);
     }
-    catch(ex){
-        console.log(ex.message);
-        res.status(500).send("Server Error:\ndeleteGenre function. Inside GenreAPIController")
+    catch(error){
+        console.log(error.message);
+        res.status(500).send(error.message);
     }
 }
