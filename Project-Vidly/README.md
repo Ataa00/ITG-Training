@@ -20,32 +20,32 @@ Use the following URLs to test CRUD functions.
   - To get all genres: http://localhost:3000/api/genres/
     - It Sends a request to get all movies in stock. 
     - It returns a response to a list with all movies.
-  - To get a specific genre: http://localhost:3000/api/genres/:type
+  - To get a specific genre: http://localhost:3000/api/genres/:name
     - Here we provide the type of the genre in the request header (URL).  
-      example:  http://localhost:3000/api/genres/Action
-    - It return a response a list with all movies that have the same genre.
+      example:  http://localhost:3000/api/genres/:Drama
+    - It returns a response to a list of all movies that have the same genre.
 - For POST:  
-To create a new genre: http://localhost:3000/api/genres/addGenre  
+To create a new genre: http://localhost:3000/api/genres/
   - Here we send the movie type inside the body request as follows:  
     ```
     {
-      "type": "Drama"
+      "name": "Drama"
     } 
     ```
-  - It returns a response with all genres list.
+  - It returns a response with all genres listed.
 - For PUT:  
-  To edit an existing genre: http://localhost:3000/api/genres/:type  
+  To edit an existing genre: http://localhost:3000/api/genres/:name
     - Here we provide the type of the genre in the request header (URL).  
       and provide the corrected movie type name inside the request body as follows:  
       http://localhost:3000/api/genres/Action
       ```
       {
-        "type": "Drama"
+        "name": "Comedy"
       } 
       ```
-    - It returns a response with all genres list.
+    - It returns a response with all genres listed.
 - For DELETE:  
-  To delete a genre: http://localhost:3000/api/genres/:type
+  To delete a genre: http://localhost:3000/api/genres/:name
     - Here we provide the type of the genre in the request header (URL).  
       http://localhost:3000/api/genres/Action
     - It returns a response with all genres listed.
@@ -54,7 +54,7 @@ To create a new genre: http://localhost:3000/api/genres/addGenre
 You should provide the changes within the body request.
 ```
 {
-  "type":"Drama"
+  "name":"Drama"
 }
 ```
 # Practice-Work-Project – Part 2 (Restructure the app):  
@@ -93,8 +93,8 @@ You should provide the changes within the body request.
     Same as Version 1. 
 - Added new APIs for Customers:
   - For Create user:
-    - I used POST method.
-    - URL: http/localhost:3000/api/customers/createCustomer
+    - I used the POST method.
+    - URL: http/localhost:3000/api/customers/
     - Inside body request:
       ```
       {
@@ -103,53 +103,53 @@ You should provide the changes within the body request.
         isGolden: ture
       }
       ```   
-    - It will go through the validation funcion in the middleware to validate the provided customer parameters.
-    - After that, before saving the customer instance the mongoose model for customer will check if the parameters valid or not.
+    - It will go through the validation function in the middleware to validate the provided customer parameters.
+    - After that, before saving the customer instance the Mongoose model for the customer will check if the parameters are valid or not.
     - It will return the created customer instance.
   - For get user:
     - There are two methods
       - Get single customer:
-        - I used GET method.
-        - URL: http/localhost:3000/api/customers/getCustomer
+        - I used the GET method.
+        - URL: http/localhost:3000/api/customers/:customerID
         - Inside body request:
           ```
           {
             "customerID": "xxxxxxxxxxxxxx"
           }
           ```   
-        - It will go through the validation funcion in the middleware to validate the provided customerID.
+        - It will go through the validation function in the middleware to validate the provided customerID.
         - CustomerID should be 24 characters of type objectId.  
         - It will return the wanted customer instance.
       - Get all customers:
-        - I used GET method.
+        - I used the GET method.
         - URL: http/localhost:3000/api/customers  
         - It will return all customers.
-  - For update user:
-    - I used PUT method.
-    - URL: http/localhost:3000/api/customers/updateCustomer
+  - For updated user:
+    - I used the PUT method.
+    - URL: http/localhost:3000/api/customers/updateCustomer/:customerID
     - Inside body request:
       ```
       {
-        "customerID": "xxxxxxxxxxxxxx",
         "name": "Human",
         "phoneNumber: "00000000000000",
-        isGolden: ture
+        isGolden: true
       }
       ```   
-    - Firstly, It will check if the wanted customer inside the database. 
-    - Secondly, If it is there, It will go through the validation funcion in the middleware to validate the provided customer parameters.
-    - After that, before saving the updated customer the mongoose model for customer will check if the parameters valid or not.
+    - First, It will check if the wanted customer is inside the database. 
+    - Secondly, If it is there, It will go through the validation function in the middleware to validate the provided customer parameters.
+    - After that, before saving the updated customer the Mongoose model for the customer will check if the parameters are valid or not.
     - It will update it and return a status message if it is updated or not. 
   - For delete user:
-    - I used PUT method.
-    - URL: http/localhost:3000/api/customers/deleteCustomer
-    - Inside body request:
-      ```
-      {
-        "customerID": "xxxxxxxxxxxxxx"
-      }
-      ```   
-    - Firstly, It will check if the wanted customer inside the database. 
-    - Secondly, If it is there, It will go through the validation funcion in the middleware to validate the provided customerID.
-    - After that, it will remove it from the Database.
-    - It will update it and return a status message if it is deleted or not. 
+    - I used the DELETE method.
+    - URL: http/localhost:3000/api/customers/:customerID
+    - First, It will check if the wanted customer is inside the database. 
+    - Secondly, If it is there, It will go through the validation function in the middleware to validate the provided customerID.
+    - It will Delete it and return a status message if it is deleted or not. 
+
+# The standards of API paths:
+- End-point paths should be represented as nouns, not verbs. One of the reasons is that the HTTP request method is already written as verbs so it naming it as a verb isn't useful and makes it unnecessary.
+- The action should be indicated from the HTTP request methods which are: GET, POST, PUT, DELETE.
+  - GET: /genres/ => Retrieve data
+  - POST: /genres/ => Create an instance
+  - PUT: /genre/:id => Update an item already exists in the DB
+  - DELETE: /genre/:id => Delete an item in the DB
