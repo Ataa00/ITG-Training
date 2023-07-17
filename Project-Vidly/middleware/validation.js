@@ -10,9 +10,10 @@ export function validateGenre(genre){
     return schema.validate(genre);
 };
 
-export function validateGenreID(genre){
+export function validateUpdatedGenre(genre){
     const schema = Joi.object({ 
-        genreID: Joi.ObjectId().required()
+        oldName: Joi.string().required().max(20),
+        newName: Joi.string().required().max(20)
     });
 
     return schema.validate(genre);
