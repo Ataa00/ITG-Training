@@ -6,7 +6,9 @@ export async function createMovie(req, res){
     try{
         const {error} = validateMovie(req.body);
 
-    if (error) return res.status(400).send(error.details[0].message);
+        if (error){
+            return res.status(400).send(error.details[0].message);
+        }
 
         const movie = await new Movie({
             title: req.body.title,
@@ -47,11 +49,15 @@ export async function getMovie(req, res){
             movieID: req.params.movieID
         });
     
-        if (error) return res.send(400, error.details[0].message);
+        if (error){
+            return res.send(400, error.details[0].message);
+        }
     
         const movie = await Movie.findById(req.params.movieID);
     
-        if (!movie) return res.status(404).send("This movie doesn't exist.");
+        if (!movie){
+            return res.status(404).send("This movie doesn't exist.");
+        }
     
         return res.status(200).send(movie);   
     }
@@ -69,14 +75,18 @@ export async function updateMovie(req, res){
                 movieID: req.params.movieID
             });
     
-        if (error) return res.send(400, error.details[0].message);
+        if (error){
+            return res.send(400, error.details[0].message);
+        }
     
         let movie = await Movie.findById(req.params.movieID);
     
-        if (!movie) return res.status(404).send("This movie doesn't exist.");
+        if (!movie){
+            return res.status(404).send("This movie doesn't exist.");
+        }
     
         
-        movie = await Movie.findByIdAndUpdate(
+        movie = await movie.updateOne(
             {
                 _id: req.params.movieID
             }, 
@@ -105,11 +115,15 @@ export async function deleteMovie(req, res){
             movieID: req.params.movieID
         });
     
-        if (error) return res.status(400).send(error.details[0].message);
+        if (error){
+            return res.status(400).send(error.details[0].message);
+        }
     
         let movie = await Movie.findById(req.params.movieID);
     
-        if (!movie) return res.status(404).send("This movie doesn't exist.");
+        if (!movie){
+            return res.status(404).send("This movie doesn't exist.");
+        }
     
         
         movie = await Movie.findByIdAndDelete(
