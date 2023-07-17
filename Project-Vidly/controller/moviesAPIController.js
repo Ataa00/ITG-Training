@@ -2,7 +2,7 @@ import express from "express";
 import Movie from "../models/movies";
 import { validateMovie, validateMovieID } from "../middleware/validation";
 
-export async function createMovie(req, res){
+export const createMovie = async function (req, res){
     try{
         const {error} = validateMovie(req.body);
 
@@ -27,7 +27,7 @@ export async function createMovie(req, res){
     }
 }
 
-export async function getMovies(req, res){
+export const  getMovies = async function (req, res){
     try{
         const movies = await Movie.find(
             {
@@ -43,7 +43,7 @@ export async function getMovies(req, res){
     }
 }
 
-export async function getMovie(req, res){
+export const getMovie = async function (req, res){
     try{
         const {error} = validateMovieID({
             movieID: req.params.movieID
@@ -68,7 +68,7 @@ export async function getMovie(req, res){
 }
 
 
-export async function updateMovie(req, res){
+export const updateMovie = async function (req, res){
     try{
         const {error} = validateMovieID(
             {
@@ -109,7 +109,7 @@ export async function updateMovie(req, res){
     }
 }
 
-export async function deleteMovie(req, res){
+export const deleteMovie = async function (req, res){
     try{
         const {error} = validateMovieID({
             movieID: req.params.movieID

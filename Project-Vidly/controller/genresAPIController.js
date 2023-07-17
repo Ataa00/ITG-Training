@@ -1,7 +1,7 @@
 import Genre from "../models/genres";
 import { validateGenre, validateUpdatedGenre} from "../middleware/validation";
 
-export async function createGenre(req, res){
+export const createGenre = async function (req, res){
     try{
         const { error } = validateGenre(
                 {
@@ -35,7 +35,7 @@ export async function createGenre(req, res){
     }
 }
 
-export async function getGenres(req, res){
+export const getGenres = async function (req, res){
     try{
         const genres = await Genre.find(
             {
@@ -53,7 +53,7 @@ export async function getGenres(req, res){
     }
 }
 
-export async function getGenre(req, res){
+export const getGenre = async function (req, res){
     try{
         const { error } = validateGenre(
             {
@@ -82,7 +82,7 @@ export async function getGenre(req, res){
     }
 }
 
-export async function updateGenre(req, res){
+export const updateGenre = async function (req, res){
     try{
         const { error } = validateUpdatedGenre(
                 {
@@ -130,7 +130,7 @@ export async function updateGenre(req, res){
     }
 }
 
-export async function deleteGenre(req, res){
+export const deleteGenre = async function (req, res){
     try{
         const { error } = validateGenre(
                 {

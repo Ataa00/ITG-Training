@@ -1,7 +1,7 @@
 import Customer from "../models/customer";
 import { validateCustomerID, validateCustomer } from "../middleware/validation";
 
-export async function createCustomer(req, res){
+export const createCustomer = async function (req, res){
     try{
         const { error } = validateCustomer(req.body);
         
@@ -25,7 +25,7 @@ export async function createCustomer(req, res){
     }
 }
 
-export async function getCustomers(req, res){
+export const getCustomers = async function (req, res){
     try{
         const customers = await Customer.find(
             {
@@ -43,7 +43,7 @@ export async function getCustomers(req, res){
     }
 }
 
-export async function getCustomer(req, res){
+export const getCustomer = async function (req, res){
     try{
         const { error } = validateCustomerID(
             {
@@ -70,7 +70,7 @@ export async function getCustomer(req, res){
     }
 }
 
-export async function updateCustomer(req, res){
+export const updateCustomer = async function (req, res){
     try{
         const { customerIDValidationError } = validateCustomerID(
                 {
@@ -115,7 +115,7 @@ export async function updateCustomer(req, res){
     }
 }
 
-export async function deleteCustomer(req, res){
+export const deleteCustomer = async function (req, res){
     try{
         const { error } = validateCustomerID({
             customerID: req.params.customerID
