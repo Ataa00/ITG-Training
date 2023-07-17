@@ -15,7 +15,7 @@ app.use("/api/genres", genre);
 app.use("/api/customers", customer);
 app.use("/api/movies", movie);
 
-let port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Listning to port ${port}...\nOpen home page: http://localhost:${port}/`);
+    console.log(`Listning to port ${port}...\nOpen home page: http://127.0.0.1:${port}/`);
 });

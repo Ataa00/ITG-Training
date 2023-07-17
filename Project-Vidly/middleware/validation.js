@@ -1,6 +1,8 @@
 
 import Joi from "joi"
-Joi.ObjectId = require("joi-objectid")(Joi);
+import joiObjectid from "joi-objectid";
+
+Joi.Objectid = joiObjectid(Joi);
 
 export function validateGenre(genre){
     const schema = Joi.object({ 
@@ -31,7 +33,7 @@ export function validateCustomer(customer){
 
 export function validateCustomerID(customerID){
     const schema = Joi.object({ 
-        customerID: Joi.ObjectId().required()
+        customerID: Joi.Objectid().required()
     });
 
     return schema.validate(customerID);
@@ -52,7 +54,7 @@ export function validateMovie(movie){
 
 export function validateMovieID(movie){
     const movieSchema = Joi.object({
-        movieID: Joi.ObjectId().required()
+        movieID: Joi.Objectid().required()
     });
 
     return movieSchema.validate(movie);
