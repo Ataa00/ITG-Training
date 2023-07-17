@@ -1,5 +1,6 @@
 import Genre from "../models/genres";
 import { validateGenre, validateUpdatedGenre} from "../middleware/validation";
+import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs"
 
 export const createGenre = async function (req, res){
     try{
@@ -10,6 +11,7 @@ export const createGenre = async function (req, res){
             );
 
         if (error){
+            writeErrorLog(400, error.details[0].message);
             return res.status(400).send(error.details[0].message);
         }
         
@@ -19,6 +21,7 @@ export const createGenre = async function (req, res){
             });
 
         if (genre[0]){
+            writeErrorLog(404, "This genre already exists.");
             return res.status(404).send("This genre already exists.");
         }
         
@@ -27,10 +30,12 @@ export const createGenre = async function (req, res){
         });
 
         const result = await genre.save();
+        writeSuccessfullLog(200, "Genre created successfully.");
         res.send(result);
     }
     catch(error){
         console.log(error.message);
+        writeErrorLog(500, error.message);
         return res.status(500).send(error.message);
     }
 }
@@ -44,11 +49,13 @@ export const getGenres = async function (req, res){
                 }
             }
         );
-
+        
+        writeSuccessfullLog(200, "Genres retrieved successfully.");
         res.send(genres);
     }
     catch(error){
         console.log(error.message);
+        writeErrorLog(500, error.message);
         return res.status(500).send(error.message);
     }
 }
@@ -62,6 +69,7 @@ export const getGenre = async function (req, res){
         );
 
         if (error){
+            writeErrorLog(400, error.details[0].message);
             return res.status(400).send(error.details[0].message);
         }
         
@@ -70,14 +78,17 @@ export const getGenre = async function (req, res){
                 name: req.params.name
             });
             
-        if (!genre){
+        if (!genre[0]){
+            writeErrorLog(404, "This genre doesn't exists.");
             return res.status(404).send("This genre doesn't exist.");
         }
 
+        writeSuccessfullLog(200, "Genre retrieved successfully.");
         res.send(genre[0]);
     }
     catch(error){
         console.log(error.message);
+        writeErrorLog(500, error.message);
         return res.status(500).send(error.message);
     }
 }
@@ -92,6 +103,7 @@ export const updateGenre = async function (req, res){
             );
 
         if (error){
+            writeErrorLog(400, error.details[0].message);
             return res.status(400).send(error.details[0].message);
         }
         
@@ -101,6 +113,7 @@ export const updateGenre = async function (req, res){
             });
             
         if (!genreParams[0]){
+            writeErrorLog(404, "The genre you want to update doesn't exist.");
             return res.status(404).send("The genre you want to update doesn't exist.");
         }
 
@@ -110,6 +123,7 @@ export const updateGenre = async function (req, res){
             });
             
         if (genreBody[0]){
+            writeErrorLog(404, "The new genre you want to update doesn't exist.");
             return res.status(404).send("The new genre you want to update already exists.");
         }
 
@@ -122,10 +136,12 @@ export const updateGenre = async function (req, res){
             }
         });
 
+        writeSuccessfullLog(200, "Genre updated successfully.");
         res.send(newGenre);
     }
     catch(error){
         console.log(error.message);
+        writeErrorLog(500, error.message);
         return res.status(500).send(error.message);
     }
 }
@@ -139,6 +155,7 @@ export const deleteGenre = async function (req, res){
             );
 
         if (error){
+            writeErrorLog(400, error.details[0].message);
             return res.status(400).send(error.details[0].message);
         }
         
@@ -148,6 +165,7 @@ export const deleteGenre = async function (req, res){
             });
             
         if (!genre[0]){
+            writeErrorLog(404, "This genre doesn't exists.");
             return res.status(404).send("This genre doesn't exist.");
         }
 
@@ -155,10 +173,12 @@ export const deleteGenre = async function (req, res){
             name: req.params.name
         });
 
+        writeSuccessfullLog(200, "Genre deleted successfully.");
         res.send(genre);
     }
     catch(error){
         console.log(error.message);
+        writeErrorLog(500, error.message);
         return res.status(500).send(error.message);
     }
 }
