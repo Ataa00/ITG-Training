@@ -7,12 +7,12 @@ const router = express.Router();
 
 router.get("/", async (req, res) => getGenres(req, res));
 
-router.get("/getGenre", async (req, res) => getGenre(req, res));
+router.get("/:name", async (req, res) => getGenre(req, res));
 
-router.post("/addGenre", async (req, res) => createGenre(req, res));
+router.post("/", async (req, res) => createGenre(req, res));
 
-router.put("/updateGenre", async (req, res) => updateGenre(req, res));
+router.put("/:name", async (req, res) => updateGenre(req, res));
 
-router.delete("/deleteGenre", async (req, res) => deleteGenre(req, res));
+router.delete("/:name", async (req, res) => deleteGenre(req, res));
 
 export default router;
