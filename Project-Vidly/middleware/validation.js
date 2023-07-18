@@ -42,11 +42,9 @@ export function validateCustomerID(customerID){
 export function validateMovie(movie){
     const movieSchema = Joi.object({
         title: Joi.string().min(0).max(30).required(),
-        genre: Joi.object().keys({
-            name: Joi.string().required().max(20)
-        }),
-    numberInStock: Joi.number(),
-    dailyRentalRate: Joi.number()
+        genreID: Joi.Objectid().required(),
+        numberInStock: Joi.number(),
+        dailyRentalRate: Joi.number()
     });
 
     return movieSchema.validate(movie);

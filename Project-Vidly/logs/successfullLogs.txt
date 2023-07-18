@@ -73,3 +73,310 @@ Open home page: http://127.0.0.1:3000/
 Success: Mon Jul 17 2023 16:49:01 GMT+0300 (Eastern European Summer Time)
 Status: 200.
 Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:35:53 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:36:06 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:36:06 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Genres retrieved successfully.
+Success: Tue Jul 18 2023 15:37:02 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:37:28 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:37:30 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:37:45 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:37:56 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:38:11 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:38:22 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:38:24 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:38:33 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:38:36 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:38:36 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie created successfully.
+Success: Tue Jul 18 2023 15:38:42 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:38:42 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 15:39:25 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:39:25 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie created successfully.
+Success: Tue Jul 18 2023 15:39:37 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:39:37 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 15:40:22 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:40:22 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 15:41:24 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:41:24 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:42:45 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:42:47 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:42:47 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:43:00 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:43:00 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 15:46:00 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:46:00 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:46:49 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:46:59 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:46:59 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:47:00 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:47:00 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:47:06 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:47:06 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:48:49 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:48:49 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:52:07 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:52:15 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:54:16 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:54:18 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:54:23 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:54:23 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 15:54:51 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:55:22 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:55:22 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:55:33 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:55:33 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 15:55:46 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 15:55:54 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 15:55:54 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 15:56:10 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:00:20 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 16:00:23 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:03:02 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 16:06:48 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 16:08:01 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:08:01 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Genre created successfully.
+Success: Tue Jul 18 2023 16:08:24 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:08:24 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie created successfully.
+Success: Tue Jul 18 2023 16:09:02 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:09:02 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Genre created successfully.
+Success: Tue Jul 18 2023 16:09:32 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:09:32 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 16:09:41 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:09:41 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 16:10:08 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:10:08 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Genre created successfully.
+Success: Tue Jul 18 2023 16:11:12 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:11:12 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie created successfully.
+Success: Tue Jul 18 2023 16:11:18 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:11:18 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 16:12:17 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:14:42 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
+Success: Tue Jul 18 2023 16:14:54 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:15:36 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:15:36 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Genres retrieved successfully.
+Success: Tue Jul 18 2023 16:15:54 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:15:54 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie created successfully.
+Success: Tue Jul 18 2023 16:16:16 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:16:16 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie created successfully.
+Success: Tue Jul 18 2023 16:16:28 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:16:28 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 16:17:24 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:17:24 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie updated successfully.
+Success: Tue Jul 18 2023 16:17:29 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:17:29 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 16:19:45 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:19:45 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 16:19:59 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:19:59 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movie deleted successfully.
+Success: Tue Jul 18 2023 16:20:03 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:20:06 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
+Success: Tue Jul 18 2023 16:20:06 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Movies retrieved successfully.

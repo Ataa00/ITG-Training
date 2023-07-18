@@ -10,8 +10,14 @@ const Movie = mongoose.model("Movie", new mongoose.Schema({
         trim: true
     },
     genre: {
-        type: genreSchema,
-        required: true
+        _id: {
+            type: mongoose.Types.ObjectId,
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        }
     },
     numberInStock: {
         type: Number,

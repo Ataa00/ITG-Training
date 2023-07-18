@@ -2,6 +2,7 @@ import express from "express";
 import Movie from "../models/movies";
 import { validateMovie, validateMovieID } from "../middleware/validation";
 import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs"
+import Genre from "../models/genres";
 
 export const createMovie = async function (req, res){
     try{
@@ -12,9 +13,19 @@ export const createMovie = async function (req, res){
             return res.status(400).send(error.details[0].message);
         }
 
+        const genre = await Genre.findById(req.body.genreID);
+        
+        if (!genre){
+            writeErrorLog(404, "This genre doesn't exists.");
+            return res.status(404).send("This genre doesn't exist.");
+        }
+
         const movie = await new Movie({
             title: req.body.title,
-            genre: req.body.genre,
+            genre: {
+                _id: genre._id,
+                name: genre.name
+            },
             numberInStock: req.body.numberInStock,
             dailyRentalRate: req.body.dailyRentalRate
         });
@@ -97,21 +108,26 @@ export const updateMovie = async function (req, res){
             writeErrorLog(404, "This movie doesn't exist.");
             return res.status(404).send("This movie doesn't exist.");
         }
-    
         
-        movie = await movie.updateOne(
-            {
-                _id: req.params.movieID
-            }, 
+        const genre = await Genre.findById(req.body.genreID);
+        
+        if (!genre){
+            writeErrorLog(404, "This genre doesn't exists.");
+            return res.status(404).send("This genre doesn't exist.");
+        }
+        
+        movie = await movie.updateOne( 
             {
                 $set: {
                     title: req.body.title,
-                    genre: req.body.genre,
+                    genre: {
+                        _id: genre._id,
+                        name: genre.name
+                    },
                     numberInStock: req.body.numberInStock,
                     dailyRentalRate: req.body.dailyRentalRate
                 }
-            },
-            {new: true}
+            }
         );
         
         writeSuccessfullLog(200, "Movie updated successfully.");
@@ -144,11 +160,7 @@ export const deleteMovie = async function (req, res){
         }
     
         
-        movie = await Movie.findByIdAndDelete(
-            {
-                _id: req.params.movieID
-            }
-        );
+        movie = await movie.deleteOne();
         
         writeSuccessfullLog(200, "Movie deleted successfully.");
         return res.status(200).send(movie);
