@@ -1,0 +1,19 @@
+{
+  "name": "practiceworktask-asyncjs",
+  "version": "1.0.0",
+  "description": "This branch aims to solve the follwing task.",
+  "main": "exercise.js",
+  "scripts": {
+    "start": "babel-node exercise.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/node": "^7.22.6",
+    "@babel/preset-env": "^7.22.9",
+    "nodemailer": "^6.9.3"
+  }
+}
