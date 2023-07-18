@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import genre, { genreSchema } from "./genres.js";
 
 const Movie = mongoose.model("Movie", new mongoose.Schema({
     title: {

@@ -380,3 +380,7 @@ Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
 Success: Tue Jul 18 2023 16:20:06 GMT+0300 (Eastern European Summer Time)
 Status: 200.
 Message: Movies retrieved successfully.
+Success: Tue Jul 18 2023 16:40:51 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
