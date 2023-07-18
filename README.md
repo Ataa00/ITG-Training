@@ -6,9 +6,10 @@ This branch aims to solve the tasks that my trainer provides me.
 For more information about each Task please enter the folder you want.
 
 ## Task: (checkout from main resolved):
-
-using the following command:  
-```git revert <sha-commit>```
+I created this branch from ES6JS branch, which is wrong approach. I should created this branch from the main branch.  
+To solve this issue, I used the following git command:  
+```git revert <sha-commit>```  
+To revert all commits that came from other branches. And keep the commits that came from the main branch.
 
 # Task1: Git-Commands
 ---
