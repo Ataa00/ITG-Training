@@ -1,6 +1,6 @@
 
 const sum = require("./math-lib/sum.js");
-const sub = require("./math-lib/substract.js");
+const sub = require("./math-lib/subtract.js");
 const mult = require("./math-lib/multiply.js");
 const divide = require("./math-lib/divide.js");
 const prompt = require('prompt-sync')({sigint: true});
