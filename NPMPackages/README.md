@@ -54,3 +54,22 @@ Also, contains selectbox to let the user select the wanted timeZone.
 
 ## Page Image:
 ![](public/img/PageImage.png)
+
+## Pagination:
+A simple defenition of pagination is displaying a subset of results to improve the page performance.  
+Lets take google search as example. When we want to search for something. It doesn't return all the searching resul in a single page. It returns a subset of results and make an indicator in the bottom 1 2 3 ... n, to indicate in which page we are. If we want to see the other results we send the page number and it will return the results that are in the same page.
+
+PageNumber: wanted page number.
+Limit: Number of results appeared in a single page.
+
+Start Index = (PageNumber - 1) * Limit 
+End Index = PageNumber * limit
+
+Now, the best Practice for applying pagination is applying it in page that dispalys books, movies or search.
+
+There is different style of pagination:
+- The regular pagination.
+- Load more
+- Infinite scroll
+
+For validating time zone. I used `npm i joi-tz` I extended  joi-tz to the original package joi.
