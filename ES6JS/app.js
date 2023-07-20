@@ -1,6 +1,6 @@
 
 import sum from "./math-lib/sum.js";
-import sub from "./math-lib/substract.js";
+import sub from "./math-lib/subtract.js";
 import mult from "./math-lib/multiply.js";
 import divide from "./math-lib/divide.js";
 
