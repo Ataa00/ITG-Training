@@ -1,16 +1,8 @@
 import Customer from "../models/customer";
-import { validateCustomerID, validateCustomer } from "../middleware/validation";
 import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs"
 
 export const createCustomer = async function (req, res){
     try{
-        const { error } = validateCustomer(req.body);
-        
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-
         const customer = await new Customer({
             name: req.body.name,
             phoneNumber: req.body.phoneNumber,
@@ -18,6 +10,7 @@ export const createCustomer = async function (req, res){
         });
 
         const result = await customer.save();
+        console.log(req.body);
         writeSuccessfullLog(200, "Customer created successfully.");
         res.status(200).send(result);
     }
@@ -48,17 +41,6 @@ export const getCustomers = async function (req, res){
 
 export const getCustomer = async function (req, res){
     try{
-        const { error } = validateCustomerID(
-            {
-                customerID: req.params.customerID
-            }
-        );
-        
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-
         const customer = await Customer
         .findById(req.params.customerID);
 
@@ -78,17 +60,6 @@ export const getCustomer = async function (req, res){
 
 export const updateCustomer = async function (req, res){
     try{
-        const { customerIDValidationError } = validateCustomerID(
-                {
-                    customerID: req.params.customerID
-                }
-            );
-        
-        if (customerIDValidationError){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-
         let customer = await Customer
         .findById({
             _id: req.params.customerID
@@ -97,13 +68,6 @@ export const updateCustomer = async function (req, res){
         if (!customer){
             writeErrorLog(404, "This customer doesn't exist.");
             return res.status(404).send("This customer doesn't exist.");
-        }
-
-        const { CustomerValidationError } = validateCustomer(req.body);
-        
-        if (CustomerValidationError){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
         }
 
         customer = await customer.updateOne(
@@ -127,15 +91,6 @@ export const updateCustomer = async function (req, res){
 
 export const deleteCustomer = async function (req, res){
     try{
-        const { error } = validateCustomerID({
-            customerID: req.params.customerID
-        });
-        
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-
         let customer = await Customer
         .findById({
             _id: req.params.customerID

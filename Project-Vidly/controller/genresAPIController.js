@@ -1,5 +1,4 @@
 import Genre from "../models/genres";
-import { validateGenre, validateUpdatedGenre} from "../middleware/validation";
 import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs";
 
 export const createGenre = async function (req, res){

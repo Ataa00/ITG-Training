@@ -43,25 +43,44 @@ export const validateUpdatedGenre = (req, res, next) => {
     next();
 };
 
-export function validateCustomer(customer){
+export const validateCustomer = (req, res, next) => {
     const schema = Joi.object({
         name: Joi.string().min(2).max(30).required(),
-        phoneNumber: Joi.string().min(14).max(14).regex(/[0-9]/),
+        phoneNumber: Joi.string().length(14).regex(/^[0-9]*$/),
         isGolden: Joi.boolean()
     });
 
-    return schema.validate(customer);
+    
+    const { error } = schema.validate(req.body);
+        
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.status(400).send(error.details[0].message);
+    }
+
+    next();
 }
 
-export function validateCustomerID(customerID){
+export const validateCustomerID = (req, res, next) => {
     const schema = Joi.object({ 
         customerID: Joi.Objectid().required()
     });
+    
+    const { error } = schema.validate(
+        {
+            customerID: req.params.customerID
+        }
+    );
+    
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.status(400).send(error.details[0].message);
+    }
 
-    return schema.validate(customerID);
+    next();
 };
 
-export function validateMovie(movie){
+export const validateMovie = (req, res, next) => {
     const movieSchema = Joi.object({
         title: Joi.string().min(0).max(30).required(),
         genreID: Joi.Objectid().required(),
@@ -69,13 +88,29 @@ export function validateMovie(movie){
         dailyRentalRate: Joi.number()
     });
 
-    return movieSchema.validate(movie);
+    const {error} = movieSchema.validate(req.body);
+
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.status(400).send(error.details[0].message);
+    }
+
+    next();
 }
 
-export function validateMovieID(movie){
+export const validateMovieID = (req, res, next) => {
     const movieSchema = Joi.object({
         movieID: Joi.Objectid().required()
     });
 
-    return movieSchema.validate(movie);
+    const {error} = movieSchema.validate({
+        movieID: req.params.movieID
+    });
+
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.send(400, error.details[0].message);
+    }
+
+    next();
 }

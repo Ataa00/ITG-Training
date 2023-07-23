@@ -11,7 +11,7 @@ const Customer = mongoose.model(
         },
         phoneNumber: {
             type: String,
-            match: /[0-9]/,
+            match: /^[0-9]*$/,
             minlength: 14,
             maxlength: 14
         },

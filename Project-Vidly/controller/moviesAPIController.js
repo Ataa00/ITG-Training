@@ -1,20 +1,12 @@
 import express from "express";
 import Movie from "../models/movies";
-import { validateMovie, validateMovieID } from "../middleware/validation";
 import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs"
 import Genre from "../models/genres";
 
 export const createMovie = async function (req, res){
     try{
-        const {error} = validateMovie(req.body);
-
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-
         const genre = await Genre.findById(req.body.genreID);
-        
+
         if (!genre){
             writeErrorLog(404, "This genre doesn't exists.");
             return res.status(404).send("This genre doesn't exist.");
@@ -42,7 +34,7 @@ export const createMovie = async function (req, res){
     }
 }
 
-export const  getMovies = async function (req, res){
+export const getMovies = async function (req, res){
     try{
         const movies = await Movie.find(
             {
@@ -62,15 +54,6 @@ export const  getMovies = async function (req, res){
 
 export const getMovie = async function (req, res){
     try{
-        const {error} = validateMovieID({
-            movieID: req.params.movieID
-        });
-    
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.send(400, error.details[0].message);
-        }
-    
         const movie = await Movie.findById(req.params.movieID);
     
         if (!movie){
@@ -92,16 +75,6 @@ export const getMovie = async function (req, res){
 
 export const updateMovie = async function (req, res){
     try{
-        const {error} = validateMovieID(
-            {
-                movieID: req.params.movieID
-            });
-    
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.send(400, error.details[0].message);
-        }
-    
         let movie = await Movie.findById(req.params.movieID);
     
         if (!movie){
@@ -143,15 +116,6 @@ export const updateMovie = async function (req, res){
 
 export const deleteMovie = async function (req, res){
     try{
-        const {error} = validateMovieID({
-            movieID: req.params.movieID
-        });
-    
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-    
         let movie = await Movie.findById(req.params.movieID);
     
         if (!movie){
