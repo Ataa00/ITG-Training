@@ -36,3 +36,6 @@ node app.js
 ```
 Note:  
 I used ```'prompt-sync'``` library to read numbers from the console. 
+
+# To handle errors using custom exception:
+- We can use `throw "something"` to throw an error and catch it in the catch statement.
