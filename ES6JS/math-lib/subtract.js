@@ -4,7 +4,7 @@ export default(firstNumber, secondNumber) => {
     secondNumber = Number(secondNumber);
 
     if(isNaN(firstNumber) || isNaN(secondNumber)){
-        return "Please enter a valid number";
+        throw "Please enter a valid number";
     }
 
     let result = firstNumber - secondNumber;

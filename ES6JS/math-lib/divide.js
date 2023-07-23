@@ -4,11 +4,11 @@ export default(firstNumber, secondNumber) => {
     secondNumber = Number(secondNumber);
 
     if(isNaN(firstNumber) || isNaN(secondNumber)){
-        return "Please enter a valid number";
+        throw "Please enter a valid number";
     }
 
     if(secondNumber === 0){
-        return "Illigel operation. Can't divide by zero.";
+        throw "Illegal operation. Can't divide by zero.";
     }
 
     let result = firstNumber / secondNumber;

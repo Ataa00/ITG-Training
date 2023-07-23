@@ -11,21 +11,25 @@ let resultInput = document.getElementById("result");
 let submitBtn = document.getElementById("submit");
 
 submitBtn.addEventListener("click", () => {
-    console.log()
-    switch(operationInput.value){
-        case "+":
-            resultInput.value = sum(firstNumberInput.value, secondNumberInput.value);
-            break;
-        case "-":
-            resultInput.value = sub(firstNumberInput.value, secondNumberInput.value);
-            break;
-        case "*":
-            resultInput.value = mult(firstNumberInput.value, secondNumberInput.value);
-            break;
-        case "/":
-            resultInput.value = divide(firstNumberInput.value, secondNumberInput.value);
-            break;
-        default:
-            console.log("Wrong operation.");
+    try{
+        switch(operationInput.value){
+            case "+":
+                resultInput.value = sum(firstNumberInput.value, secondNumberInput.value);
+                break;
+            case "-":
+                resultInput.value = sub(firstNumberInput.value, secondNumberInput.value);
+                break;
+            case "*":
+                resultInput.value = mult(firstNumberInput.value, secondNumberInput.value);
+                break;
+            case "/":
+                resultInput.value = divide(firstNumberInput.value, secondNumberInput.value);
+                break;
+            default:
+                throw "Wrong operation.";
+        }
+    }
+    catch (error){
+        resultInput.value = error;
     }
 });
