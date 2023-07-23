@@ -1,20 +1,9 @@
 import Genre from "../models/genres";
 import { validateGenre, validateUpdatedGenre} from "../middleware/validation";
-import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs"
+import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs";
 
 export const createGenre = async function (req, res){
     try{
-        const { error } = validateGenre(
-                {
-                    name: req.body.name
-                }
-            );
-
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-        
         let genre = await Genre
             .find({
                 name: req.body.name
@@ -62,17 +51,6 @@ export const getGenres = async function (req, res){
 
 export const getGenre = async function (req, res){
     try{
-        const { error } = validateGenre(
-            {
-                name: req.params.name
-            }
-        );
-
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-        
         const genre = await Genre
             .find({
                 name: req.params.name
@@ -95,18 +73,6 @@ export const getGenre = async function (req, res){
 
 export const updateGenre = async function (req, res){
     try{
-        const { error } = validateUpdatedGenre(
-                {
-                    oldName: req.params.name,
-                    newName: req.body.name
-                }
-            );
-
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-        
         const genreParams = await Genre
             .find({
                 name: req.params.name
@@ -148,17 +114,6 @@ export const updateGenre = async function (req, res){
 
 export const deleteGenre = async function (req, res){
     try{
-        const { error } = validateGenre(
-                {
-                    name: req.params.name
-                }
-            );
-
-        if (error){
-            writeErrorLog(400, error.details[0].message);
-            return res.status(400).send(error.details[0].message);
-        }
-        
         let genre = await Genre
             .find({
                 name: req.params.name

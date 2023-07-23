@@ -1,24 +1,46 @@
 
 import Joi from "joi"
 import joiObjectid from "joi-objectid";
+import {writeErrorLog} from "../middleware/logs";
 
 Joi.Objectid = joiObjectid(Joi);
 
-export function validateGenre(genre){
+export const validateGenre = (req, res, next) => {
     const schema = Joi.object({ 
         name: Joi.string().required().max(20)
     });
 
-    return schema.validate(genre);
+    const { error } = schema.validate({
+        name: (req.params.name || req.body.name)
+    });
+
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.status(400).send(error.details[0].message);
+    }
+
+    next();
 };
 
-export function validateUpdatedGenre(genre){
+export const validateUpdatedGenre = (req, res, next) => {
     const schema = Joi.object({ 
         oldName: Joi.string().required().max(20),
         newName: Joi.string().required().max(20)
     });
 
-    return schema.validate(genre);
+    const { error } = schema.validate(
+        {
+            oldName: req.params.name,
+            newName: req.body.name
+        }
+    );
+
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.status(400).send(error.details[0].message);
+    }
+
+    next();
 };
 
 export function validateCustomer(customer){
