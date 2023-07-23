@@ -56,7 +56,7 @@ export const getGenre = async function (req, res){
             });
             
         if (!genre){
-            writeErrorLog(404, "This genre doesn't exists.");
+            writeErrorLog(404, "This genre doesn't exist.");
             return res.status(404).send("This genre doesn't exist.");
         }
 
@@ -119,7 +119,7 @@ export const deleteGenre = async function (req, res){
             });
             
         if (!genre){
-            writeErrorLog(404, "This genre doesn't exists.");
+            writeErrorLog(404, "This genre doesn't exist.");
             return res.status(404).send("This genre doesn't exist.");
         }
 
