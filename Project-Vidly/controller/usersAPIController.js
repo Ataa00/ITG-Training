@@ -2,7 +2,7 @@ import { writeErrorLog, writeSuccessfullLog } from "../middleware/logs.js";
 import User from "../models/users.js";
 import bcrypt from "bcrypt";
 
-export const createUser = async (req, res) => {
+export const register = async (req, res) => {
     try {
         let user = await User.findOne({email: req.body.email});
 

@@ -94,7 +94,7 @@ You should provide the changes within the body request.
 - Added new APIs for Customers:
   - For Create user:
     - I used the POST method.
-    - URL: http/localhost:3000/api/customers/
+    - URL: http://localhost:3000/api/customers/
     - Inside body request:
       ```
       {
@@ -110,7 +110,7 @@ You should provide the changes within the body request.
     - There are two methods
       - Get single customer:
         - I used the GET method.
-        - URL: http/localhost:3000/api/customers/:customerID
+        - URL: http://localhost:3000/api/customers/:customerID
         - Inside body request:
           ```
           {
@@ -126,7 +126,7 @@ You should provide the changes within the body request.
         - It will return all customers.
   - For updated user:
     - I used the PUT method.
-    - URL: http/localhost:3000/api/customers/updateCustomer/:customerID
+    - URL: http://localhost:3000/api/customers/updateCustomer/:customerID
     - Inside body request:
       ```
       {
@@ -141,7 +141,7 @@ You should provide the changes within the body request.
     - It will update it and return a status message if it is updated or not. 
   - For delete user:
     - I used the DELETE method.
-    - URL: http/localhost:3000/api/customers/:customerID
+    - URL: http://localhost:3000/api/customers/:customerID
     - First, It will check if the wanted customer is inside the database. 
     - Secondly, If it is there, It will go through the validation function in the middleware to validate the provided customerID.
     - It will Delete it and return a status message if it is deleted or not. 
@@ -164,11 +164,27 @@ You should provide the changes within the body request.
 - For the APIs I just needed the following:
   - Get rentals:
     - I used the GET method.
-        - URL: http/localhost:3000/api/rentals/
+        - URL: http://localhost:3000/api/rentals/
         - return a list of rentals.
   - Create rentals:
     - I used POST method.
-    - URL: http/localhost:3000/api/rentals
+    - URL: http://localhost:3000/api/rentals
     - I just pass the customerID and The movieID.
     - After creating new rental I decrement the movie number in stock.
     - I used Transaction to make sure that the two operations (saving rental and decrementing the movie number in the stock) are completed without errors.
+
+- Created User model:
+  - Have the following properties:
+    - Name
+    - Email
+    - Password
+  - Used one API to register a user
+    - Register a user:
+      - Used POST method
+      - URL: http://localhost:3000/api/users
+      - Send whithin the body request the email and the password and name.
+- Created Auth API:
+  - Login User:
+    - Used POST method.
+    - URL: http://localhost:3000/api/auth
+    - Send the email and the password inside the body request.

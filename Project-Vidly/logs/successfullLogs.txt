@@ -1870,3 +1870,7 @@ Message: Connected to the DataBase on: mongodb://127.0.0.1:27017/vidlyDB
 Success: Sun Jul 23 2023 16:34:07 GMT+0300 (Eastern European Summer Time)
 Status: 200.
 Message: Logged in...
+Success: Sun Jul 23 2023 16:54:43 GMT+0300 (Eastern European Summer Time)
+Status: 200.
+Message: Listning to port 3000...
+Open home page: http://127.0.0.1:3000/
