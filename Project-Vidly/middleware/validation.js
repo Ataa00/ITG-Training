@@ -114,3 +114,21 @@ export const validateMovieID = (req, res, next) => {
 
     next();
 }
+
+export const validateRental = (req, res, next) => {
+    const schema = Joi.object({
+        customerID: Joi.Objectid().required(),
+        movieID: Joi.Objectid().required()
+    });
+
+    const {error} = schema.validate({
+        customerID: req.body.customerID,
+        movieID: req.body.movieID
+    });
+
+    if (error){
+        return res.status(400).send(error.details[0].message);
+    }
+
+    next();
+}
