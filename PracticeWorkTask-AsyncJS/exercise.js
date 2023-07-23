@@ -1,9 +1,10 @@
 import nodeMailer from "nodemailer";
+import "dotenv/config";
 
 const admin = {
-  name: "Ataa Shaqour",
-  email: "myrtis.maggio12@ethereal.email",
-  password: "tnbK8GGGfRqkjP2gMb"
+  name: process.env.ADMIN_NAME,
+  email: process.env.ADMIN_EMAIL,
+  password: process.env.ADMIN_PASSWORD
 }
 
 const user = {
@@ -32,7 +33,7 @@ async function notifyCustomer(){
   catch(error){
     console.log("Error: ", error.message);
   }
-}
+} 
 
 notifyCustomer().catch(err => console.log(err.message));
 
@@ -79,9 +80,9 @@ function createConnection(){
 
 function getMailOptions(user, subject, text){
   return {
-    from: `${admin.name} <${admin.email}>`, // sender address
-    to: user.email, // list of receivers
-    subject: subject, // Subject line
-    text: text, // plain text body
+    from: `${admin.name} <${admin.email}>`,
+    to: user.email,
+    subject: subject,
+    text: text,
   }
 }
