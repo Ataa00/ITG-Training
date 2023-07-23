@@ -153,3 +153,22 @@ You should provide the changes within the body request.
   - POST: /genres/ => Create an instance
   - PUT: /genre/:id => Update an item already exists in the DB
   - DELETE: /genre/:id => Delete an item in the DB
+
+# Rental APIs:
+- I added rental model which includs:
+  - Customer => (name, phoneNumber, isGolden)
+  - Movie => (title, dailyRental) 
+  - DateOut
+  - DateRented
+  - RentalFee
+- For the APIs I just needed the following:
+  - Get rentals:
+    - I used the GET method.
+        - URL: http/localhost:3000/api/rentals/
+        - return a list of rentals.
+  - Create rentals:
+    - I used POST method.
+    - URL: http/localhost:3000/api/rentals
+    - I just pass the customerID and The movieID.
+    - After creating new rental I decrement the movie number in stock.
+    - I used Transaction to make sure that the two operations (saving rental and decrementing the movie number in the stock) are completed without errors.
