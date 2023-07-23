@@ -10,24 +10,28 @@ let secondNumber = null;
 let operation = null;
 
 while(operation !== "e"){
-    
-    firstNumber = Number(prompt("Enter the first number: "));
-    secondNumber = Number(prompt("Enter the second number: "));
-    operation = prompt("Enter the operation you want to apply (sum: *, sub: -, devide: /, mult: *, exit: e): ");
-    switch(operation){
-        case "+":
-            console.log(sum(firstNumber, secondNumber));
-            break;
-        case "-":
-            console.log(sub(firstNumber, secondNumber));
-            break;
-        case "*":
-            console.log(mult(firstNumber, secondNumber));
-            break;
-        case "/":
-            console.log(divide(firstNumber, secondNumber));
-            break;
-        default:
-            console.log("Wrong operation.")
+    try{
+        firstNumber = Number(prompt("Enter the first number: "));
+        secondNumber = Number(prompt("Enter the second number: "));
+        operation = prompt("Enter the operation you want to apply (sum: *, sub: -, devide: /, mult: *, exit: e): ");
+        switch(operation){
+            case "+":
+                console.log(sum(firstNumber, secondNumber));
+                break;
+            case "-":
+                console.log(sub(firstNumber, secondNumber));
+                break;
+            case "*":
+                console.log(mult(firstNumber, secondNumber));
+                break;
+            case "/":
+                console.log(divide(firstNumber, secondNumber));
+                break;
+            default:
+                throw "Wrong operation."
+        }
+    }
+    catch (error){
+        console.log(error);
     }
 }
