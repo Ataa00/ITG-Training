@@ -4,3 +4,4 @@
 */coverage/
 sonar-project.properties
 .scannerwork
+.env

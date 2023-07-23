@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
+import "dotenv/config";
+
 import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs";
 
 export default async function connectDB(_0, _1, next){
-    const databaseURL = "mongodb://127.0.0.1:27017/vidlyDB";
+    const databaseURL = process.env.DATABASE_URL;
     await mongoose.connect(databaseURL)
     .then(() => {
         const message = `Connected to the database on: ${databaseURL}`;
