@@ -132,3 +132,36 @@ export const validateRental = (req, res, next) => {
 
     next();
 }
+
+export const validateUser = async (req, res, next) => {
+    const schema = Joi.object({
+        name: Joi.string().min(2).max(80).required(),
+        email: Joi.string().min(8).max(255).email().required(),
+        password: Joi.string().min(8).max(255).required()
+    });
+
+    const {error} = schema.validate(req.body);
+
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.status(400).send(error.details[0].message);
+    }
+
+    next();
+}
+
+export const validatelogin = async (req, res, next) => {
+    const schema = Joi.object({
+        email: Joi.string().min(8).max(255).email().required(),
+        password: Joi.string().min(8).max(255).required()
+    });
+
+    const {error} = schema.validate(req.body);
+
+    if (error){
+        writeErrorLog(400, error.details[0].message);
+        return res.status(400).send(error.details[0].message);
+    }
+
+    next();
+}

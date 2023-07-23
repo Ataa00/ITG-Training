@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Ataa00/ITG-Training#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "express": "^4.18.2",
     "joi": "^17.9.2",
     "joi-objectid": "^4.0.2",

@@ -4,11 +4,11 @@ import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs";
 export const createGenre = async function (req, res){
     try{
         let genre = await Genre
-            .find({
+            .findOne({
                 name: req.body.name
             });
 
-        if (genre[0]){
+        if (genre){
             writeErrorLog(404, "This genre already exists.");
             return res.status(404).send("This genre already exists.");
         }
