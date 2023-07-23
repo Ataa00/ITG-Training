@@ -2,7 +2,7 @@ import { writeErrorLog, writeSuccessfullLog } from "../middleware/logs.js";
 import User from "../models/users.js";
 import bcrypt from "bcrypt";
 
-export const login = async (req, res) => {
+const login = async (req, res) => {
     const user = await User.findOne({email: req.body.email});
 
     if (!user){
@@ -18,5 +18,7 @@ export const login = async (req, res) => {
     }
 
     writeSuccessfullLog(200, "Logged in...");
-    return res.status(200).send("Logged in...");
+    res.status(200).redirect("/");
 }
+
+export default login;

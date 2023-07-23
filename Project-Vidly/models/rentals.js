@@ -11,7 +11,7 @@ const rentalsSchema = new mongoose.Schema({
             },
             phoneNumber: {
                 type: String,
-                match: /[0-9]/,
+                match: /\d/,
                 minlength: 14,
                 maxlength: 14
             },

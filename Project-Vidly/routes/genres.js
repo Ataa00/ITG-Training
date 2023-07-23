@@ -6,7 +6,7 @@ import { validateCustomer, validateGenre, validateUpdatedGenre } from "../middle
 
 const router = express.Router();
 
-router.get("/", async (req, res) => getGenres(req, res));
+router.get("/", async (_, res) => getGenres(_, res));
 
 router.get("/:name",
     (req, res, next) => validateGenre(req, res, next),

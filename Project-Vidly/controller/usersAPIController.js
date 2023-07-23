@@ -23,10 +23,10 @@ export const register = async (req, res) => {
         await user.save();
 
         writeSuccessfullLog(200, "User successfully registered");
-        return res.status(200).send(user);   
+        res.status(200).send(user);   
     }
     catch (error) {
         writeErrorLog(error.message);
-        return res.status(500).send(error.message);
+        res.status(500).send(error.message);
     }
 }

@@ -10,7 +10,6 @@ export const createCustomer = async function (req, res){
         });
 
         await customer.save();
-        console.log(req.body);
         writeSuccessfullLog(200, "Customer created successfully.");
         res.status(200).send(customer);
     }

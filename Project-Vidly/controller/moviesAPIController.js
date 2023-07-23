@@ -24,7 +24,7 @@ export const createMovie = async function (req, res){
         await movie.save();
 
         writeSuccessfullLog(200, "Movie created successfully.");
-        return res.status(200).send(movie);
+        res.status(200).send(movie);
     }
     catch(error){
         console.log(error.message);
@@ -33,7 +33,7 @@ export const createMovie = async function (req, res){
     }
 }
 
-export const getMovies = async function (req, res){
+export const getMovies = async function (_, res){
     try{
         const movies = await Movie.find(
             {
@@ -42,12 +42,12 @@ export const getMovies = async function (req, res){
         );
 
         writeSuccessfullLog(200, "Movies retrieved successfully.");
-        return res.status(200).send(movies);
+        res.status(200).send(movies);
     }
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message);
+        res.status(500).send(error.message);
     }
 }
 
@@ -62,7 +62,7 @@ export const getMovie = async function (req, res){
 
         writeSuccessfullLog(200, "Movie retrieved successfully.");
     
-        return res.status(200).send(movie);   
+        res.status(200).send(movie);   
     }
     catch(error){
         console.log(error.message);
@@ -104,7 +104,7 @@ export const updateMovie = async function (req, res){
         
         writeSuccessfullLog(200, "Movie updated successfully.");
 
-        return res.status(200).send(movie);
+        res.status(200).send(movie);
     }
     catch(error){
         console.log(error.message);
@@ -126,7 +126,7 @@ export const deleteMovie = async function (req, res){
         movie = await movie.deleteOne();
         
         writeSuccessfullLog(200, "Movie deleted successfully.");
-        return res.status(200).send(movie);
+        res.status(200).send(movie);
     }
     catch(error){
         console.log(error.message);

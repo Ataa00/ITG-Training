@@ -7,7 +7,7 @@ import rental from "./routes/rentals";
 import user from "./routes/users";
 import auth from "./routes/auth";
 import connectDB from "./middleware/connectDB";
-import {writeSuccessfullLog, writeErrorLog} from "./middleware/logs";
+import {writeSuccessfullLog} from "./middleware/logs";
 
 const app = express();
 

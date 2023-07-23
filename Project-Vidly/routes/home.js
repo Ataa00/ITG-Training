@@ -4,6 +4,6 @@ import {getGenres} from "../controller/genresAPIController";
 
 const router = express.Router();
 
-router.get("/", async (req, res) =>  getGenres(req, res));
+router.get("/", async (_, res) =>  getGenres(_, res));
 
 export default router;

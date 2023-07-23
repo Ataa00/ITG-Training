@@ -1,6 +1,6 @@
 import express from "express";
 import { validatelogin } from "../middleware/validation";
-import { login } from "../controller/authAPIController";
+import login from "../controller/authAPIController";
 
 const router = express.Router();
 

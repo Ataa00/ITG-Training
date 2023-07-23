@@ -4,7 +4,7 @@ import { getRentals, createRental } from "../controller/rentalsAPIController";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => await getRentals(req, res));
+router.get("/", async (_, res) => await getRentals(_, res));
 
 router.post("/", 
     (req, res, next) => validateRental(req, res, next),

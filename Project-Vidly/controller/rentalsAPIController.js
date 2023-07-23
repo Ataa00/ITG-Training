@@ -59,23 +59,23 @@ export const createRental = async (req, res) => {
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message)
+        res.status(500).send(error.message)
     }
 }
 
-export const getRentals = async (req, res) => {
+export const getRentals = async (_, res) => {
     try{
         const rentals = await Rental.find({
             _id: {$exists: true}
         })
         .sort("-dateOut");
     
-            writeSuccessfullLog(200, "Rentals retrieved successfully.");
-            return res.status(200).send(rentals);
+        writeSuccessfullLog(200, "Rentals retrieved successfully.");
+        res.status(200).send(rentals);
     }
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message)
+        res.status(500).send(error.message)
     }
 }

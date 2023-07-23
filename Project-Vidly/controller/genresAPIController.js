@@ -24,11 +24,11 @@ export const createGenre = async function (req, res){
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message);
+        res.status(500).send(error.message);
     }
 }
 
-export const getGenres = async function (req, res){
+export const getGenres = async function (_, res){
     try{
         const genres = await Genre.find(
             {
@@ -44,29 +44,29 @@ export const getGenres = async function (req, res){
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message);
+        res.status(500).send(error.message);
     }
 }
 
 export const getGenre = async function (req, res){
     try{
         const genre = await Genre
-            .find({
+            .findOne({
                 name: req.params.name
             });
             
-        if (!genre[0]){
+        if (!genre){
             writeErrorLog(404, "This genre doesn't exists.");
             return res.status(404).send("This genre doesn't exist.");
         }
 
         writeSuccessfullLog(200, "Genre retrieved successfully.");
-        res.send(genre[0]);
+        res.send(genre);
     }
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message);
+        res.status(500).send(error.message);
     }
 }
 
@@ -107,18 +107,18 @@ export const updateGenre = async function (req, res){
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message);
+        res.status(500).send(error.message);
     }
 }
 
 export const deleteGenre = async function (req, res){
     try{
         let genre = await Genre
-            .find({
+            .findOne({
                 name: req.params.name
             });
             
-        if (!genre[0]){
+        if (!genre){
             writeErrorLog(404, "This genre doesn't exists.");
             return res.status(404).send("This genre doesn't exist.");
         }
@@ -133,6 +133,6 @@ export const deleteGenre = async function (req, res){
     catch(error){
         console.log(error.message);
         writeErrorLog(500, error.message);
-        return res.status(500).send(error.message);
+        res.status(500).send(error.message);
     }
 }

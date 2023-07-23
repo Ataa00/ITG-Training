@@ -46,7 +46,7 @@ export const validateUpdatedGenre = (req, res, next) => {
 export const validateCustomer = (req, res, next) => {
     const schema = Joi.object({
         name: Joi.string().min(2).max(30).required(),
-        phoneNumber: Joi.string().length(14).regex(/^[0-9]*$/),
+        phoneNumber: Joi.string().length(14).regex(/^\d*$/),
         isGolden: Joi.boolean()
     });
 

@@ -4,7 +4,7 @@ import { validateMovie, validateMovieID } from "../middleware/validation";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => await getMovies(req, res));
+router.get("/", async (_, res) => await getMovies(_, res));
 
 router.get("/:movieID",
     (req, res, next) => validateMovieID(req, res, next),

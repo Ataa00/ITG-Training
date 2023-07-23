@@ -1,7 +1,4 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-
-const SALT_WORK_FACTOR = 10;
 
 const userSchema = new mongoose.Schema({
     name: {
