@@ -2,7 +2,7 @@
 
 # Branch Description:
 
-This branch aims to solve the follwing task.
+This branch aims to solve the following task.
 
 # Task: AsyncJS
 ---
