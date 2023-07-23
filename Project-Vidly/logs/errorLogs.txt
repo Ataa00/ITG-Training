@@ -184,3 +184,27 @@ Message: "phoneNumber" with value "s009705958s53s" fails to match the required p
 Error: Sun Jul 23 2023 11:58:26 GMT+0300 (Eastern European Summer Time)
 Status: 404.
 Message: This customer doesn't exist.
+Error: Sun Jul 23 2023 12:55:09 GMT+0300 (Eastern European Summer Time)
+Status: 400.
+Message: The customer you required doesn't exist.
+Error: Sun Jul 23 2023 12:55:21 GMT+0300 (Eastern European Summer Time)
+Status: 404.
+Message: The movie you required doesn't exist.
+Error: Sun Jul 23 2023 12:57:24 GMT+0300 (Eastern European Summer Time)
+Status: 500.
+Message: Rental validation failed: Customer: Path `Customer` is required.
+Error: Sun Jul 23 2023 12:57:30 GMT+0300 (Eastern European Summer Time)
+Status: 500.
+Message: Rental validation failed: Customer: Path `Customer` is required.
+Error: Sun Jul 23 2023 12:58:45 GMT+0300 (Eastern European Summer Time)
+Status: 500.
+Message: Rental validation failed: Customer: Path `Customer` is required.
+Error: Sun Jul 23 2023 12:59:20 GMT+0300 (Eastern European Summer Time)
+Status: 400.
+Message: The customer you required doesn't exist.
+Error: Sun Jul 23 2023 12:59:28 GMT+0300 (Eastern European Summer Time)
+Status: 404.
+Message: The movie you required doesn't exist.
+Error: Sun Jul 23 2023 12:59:54 GMT+0300 (Eastern European Summer Time)
+Status: 500.
+Message: Rental validation failed: Customer: Path `Customer` is required.

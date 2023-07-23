@@ -9,10 +9,10 @@ export const createCustomer = async function (req, res){
             isGolden: req.body.isGolden
         });
 
-        const result = await customer.save();
+        await customer.save();
         console.log(req.body);
         writeSuccessfullLog(200, "Customer created successfully.");
-        res.status(200).send(result);
+        res.status(200).send(customer);
     }
     catch(error){
         writeErrorLog(500, error.message);

@@ -1,4 +1,3 @@
-import express from "express";
 import Movie from "../models/movies";
 import {writeSuccessfullLog, writeErrorLog} from "../middleware/logs"
 import Genre from "../models/genres";
@@ -22,10 +21,10 @@ export const createMovie = async function (req, res){
             dailyRentalRate: req.body.dailyRentalRate
         });
 
-        const result = await movie.save();
+        await movie.save();
 
         writeSuccessfullLog(200, "Movie created successfully.");
-        return res.status(200).send(result);
+        return res.status(200).send(movie);
     }
     catch(error){
         console.log(error.message);
