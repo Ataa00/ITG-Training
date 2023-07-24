@@ -13,18 +13,18 @@ This branch aims to solve the following task.
 - To prepare the project for ES6JS:
   - Installed Papel libraries:
     ```npm i @babel/node @babel/core @babel/preset-env```
-  - Create new folder called `.babelrc`:
+  - Create a new folder called `.babelrc`:
     ```
     {
       "presets": ["@babel/preset-env"]
     }
     ```
-- For sensetive information like passwords used `dotenv` package:
+- For sensitive information like passwords used the `dotenv` package:
   - For package installation:  
   ```npm i dotenv```
   - For importing the package:
   ```import "dotenv/config"```
-  - It allows you to store the variables inside `.env` file into `process.env` variables.
+  - It allows you to store the variables inside the `.env` file into `process.env` variables.
 - For email services used nodemailer.
   - For installing nodmailer package:  
   ```npm i nodemailer```
