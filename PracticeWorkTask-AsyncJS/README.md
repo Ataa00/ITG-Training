@@ -22,7 +22,7 @@ This branch aims to solve the following task.
 - For sensitive information like passwords used the `dotenv` package:
   - For package installation:  
   ```npm i dotenv```
-  - For importing the package:
+  - For importing the package:  
   ```import "dotenv/config"```
   - It allows you to store the variables inside the `.env` file into `process.env` variables.
 - For email services used nodemailer.
