@@ -1,23 +1,29 @@
 # ITG-Training
-
-# Branch Description:
-
-This branch aims to solve the following task.
-
-# Task: AsyncJS
 ---
-- The "exercise.js" file has code written in a callback approach.  
-I should convert this approach to an async and await approach.
-- (Extra) Make a movie list instead of the static array and choose randomly.
-- (Extra) Integrate an actual email service.
-  - I used the nodemailer package for email services ```npm i nodemailer```
-  - First, I created a nodemailer transporter and made some configurations for the sender which are:
-    - Set the host provider => (smtp.office365.com, smtp.ethereal.email)
-    - Set the port number for the SMTP protocol.
-    - Set the user email and password
-  - Then, I made a function to create a message.
-  - Finally, Sent that message to the wanted user.
-  - I sent an email from an actual email.  
-    ![](emailSent.png)
-  - I sent an email from a virtual email
-    ![](SentFromVirtualEmail.png)
+## Branch Description:
+---
+This branch aims to solve the following task.
+## Task: AsyncJS
+---
+- This task aims to know the difference between a callback and async-await approaches.
+- Also, how to integrate an actual email service.
+## Tools and packages:
+---
+- For the back-end: NodeJS, ExpressJS.
+  - For initializing the project:  
+    ```npm init```  
+  - For installing express:  
+    ```npm i express```
+- For email services used nodemailer.
+  - For installing nodmailer package:  
+  ```npm i nodemailer```
+### Nodemailer:
+---
+  For more information, you can check this out [Nodemailer](https://nodemailer.com/about/).
+  
+## Snapshots
+---
+- Sending from actual email.  
+  ![](emailSent.png)
+- Sending from virtual email:
+  ![](SentFromVirtualEmail.png)
