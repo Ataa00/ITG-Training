@@ -1,4 +1,7 @@
-*/package-lock.json
 */node_modules/
-.scannerwork
+*/package-lock.json
+*/logs/*
+*/coverage/
 sonar-project.properties
+.scannerwork
+.env
